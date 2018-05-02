@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.zstok.infraestrutura.gui.LoginActivity" />
-        <activity android:name="com.zstok.RegistroActivity" />
+        <activity android:name="com.zstok.usuario.gui.RegistroActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

@@ -1,13 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\59df10a9440d4adcdf8d1aec17b9c308\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-database-15.0.0.aar\610a6ea6fc5c8364f7b25c8fa30b286a\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.firebase:firebase-database-connection:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-15.0.0.aar\7733506d9279e2e926d053cc4b210d38\AndroidManifest.xml:2:1-8:12
@@ -23,6 +20,9 @@ MERGED from [com.google.android.gms:play-services-stats:15.0.0] C:\Users\User\.g
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.0.aar\d131895236d2b82418108c3eb0920266\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.0.aar\2c61476a8d5d29b28be614250f049896\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5059baaf7dd2ba6239deca98c33f3df0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\bf945b82b931470f209570ad229aa547\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4e335da3bc30e751b6cc95b76a02f3f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\c45a5b43adc654144823cfa032eb90ed\AndroidManifest.xml:17:1-22:12
@@ -35,25 +35,25 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\User\.gradle\cache
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5c8d74e9147073e02cda0b433e77b290\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.0.aar\00c6feb4aadb9b5971a7c9e42a07656a\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f8967d3f7dc507a37095212dfe5be2c6\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:3:5-24
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:3:5-24
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:5:5-79
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:5:5-79
 MERGED from [com.google.firebase:firebase-analytics:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.0.aar\be623cca12df619da1083b6b04f14323\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-analytics:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.0.aar\be623cca12df619da1083b6b04f14323\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-analytics-impl:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.0.aar\4cce7df59bd95dfbe12e6a5258b0797b\AndroidManifest.xml:24:5-79
@@ -61,11 +61,9 @@ MERGED from [com.google.firebase:firebase-analytics-impl:15.0.0] C:\Users\User\.
 MERGED from [com.google.firebase:firebase-iid:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.0.0.aar\8c42cde9cabbbd049265637ae4209be0\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.0.0.aar\8c42cde9cabbbd049265637ae4209be0\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:5:22-76
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:7:5-23:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:7:5-23:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-analytics:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.0.aar\be623cca12df619da1083b6b04f14323\AndroidManifest.xml:28:5-53:19
@@ -86,54 +84,50 @@ MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.0] C:\User
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.0.aar\d131895236d2b82418108c3eb0920266\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-basement:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.0.aar\2c61476a8d5d29b28be614250f049896\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.0.aar\2c61476a8d5d29b28be614250f049896\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.0.aar\00c6feb4aadb9b5971a7c9e42a07656a\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.0.aar\00c6feb4aadb9b5971a7c9e42a07656a\AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.zstok.pessoa.gui.RegistroActivity
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:14:19-62
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:19-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.zstok.infraestrutura.gui.LoginActivity
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:21:9-70
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:9-70
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:21:19-67
-activity#com.zstok.RegistroActivity
-ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:22:9-54
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:19-67
+activity#com.zstok.usuario.gui.RegistroActivity
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:9-66
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml:22:19-51
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:19-63
 uses-sdk
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\59df10a9440d4adcdf8d1aec17b9c308\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\59df10a9440d4adcdf8d1aec17b9c308\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-database-15.0.0.aar\610a6ea6fc5c8364f7b25c8fa30b286a\AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-database:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-database-15.0.0.aar\610a6ea6fc5c8364f7b25c8fa30b286a\AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:20:5-44
@@ -164,6 +158,12 @@ MERGED from [com.google.android.gms:play-services-basement:15.0.0] C:\Users\User
 MERGED from [com.google.android.gms:play-services-basement:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.0.aar\2c61476a8d5d29b28be614250f049896\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5059baaf7dd2ba6239deca98c33f3df0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5059baaf7dd2ba6239deca98c33f3df0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\07eae5f16944e4ba8f26ccaae25cb203\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\d407be1de798219f35051e0c30ab3fab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\02fb5aa7975637950c6e26b5ae99a8e2\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\bf945b82b931470f209570ad229aa547\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\bf945b82b931470f209570ad229aa547\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d4e335da3bc30e751b6cc95b76a02f3f\AndroidManifest.xml:20:5-44
@@ -188,16 +188,16 @@ MERGED from [com.google.android.gms:play-services-measurement-base:15.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.0.aar\00c6feb4aadb9b5971a7c9e42a07656a\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f8967d3f7dc507a37095212dfe5be2c6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f8967d3f7dc507a37095212dfe5be2c6\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\AndroidStudioProjects\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:23:9-29:75
 	android:excludeFromRecents

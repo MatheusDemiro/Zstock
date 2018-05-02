@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\Zstok\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
+            "outputFile": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1ee246f372b8f1aed47d007a3b71eecf\\res\\values-en-rGB\\values-en-rGB.xml",
@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
+                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
+                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,4473",
+                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
+                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,4550"
+                    }
+                },
+                {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.0.aar\\2c61476a8d5d29b28be614250f049896\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -35,23 +52,6 @@
                         "startOffsets": "2965",
                         "endColumns": "196",
                         "endOffsets": "3157"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\dfc7d75605b12e0e343313334ee5ccab\\res\\values-en-rGB\\values-en-rGB.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
-                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
-                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,4473",
-                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
-                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,4550"
                     }
                 },
                 {
