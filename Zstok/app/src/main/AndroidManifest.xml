@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".infraestrutura.gui.LoginActivity" />
-        <activity android:name=".RegistroActivity" />
+        <activity android:name=".usuario.gui.RegistroActivity" />
     </application>
 
 </manifest>
