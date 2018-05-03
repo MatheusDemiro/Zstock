@@ -8,25 +8,46 @@
     tools:context=".infraestrutura.gui.LoginActivity">
 
     <EditText
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:hint="Email"/>
+        android:layout_marginTop="100dp"
+        android:hint="@string/zs_hint_email"/>
 
     <EditText
+        android:id="@+id/edtSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Senha"/>
+        android:hint="@string/zs_hint_senha"/>
+
     <Button
+        android:id="@+id/btnEntrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Entrar"/>
+        android:text="@string/zs_btn_entrar"/>
 
-    <TextView
-        android:layout_width="match_parent"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frame_layout_login"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Registre-se"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        tools:context=".infraestrutura.gui.LoginActivity">
+
+        <TextView
+            android:id="@+id/txtNaoRegistrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/zs_txt_registro"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/txtRegistreSe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/zs_txt_registre_se" />
+    </FrameLayout>
 </LinearLayout>

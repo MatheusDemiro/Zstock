@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Zstok</string>
+
+    <string name="zs_hint_email">Email</string>
+    <string name="zs_hint_senha">Senha</string>
+    <string name="zs_hint_cf_cnpj">CPF/CNPJ</string>
+
+    <string name="zs_txt_registro">Não é registrado?</string>
+    <string name="zs_txt_registre_se">Registre-se</string>
+
+    <string name="zs_btn_entrar">Entrar</string>
 </resources>
