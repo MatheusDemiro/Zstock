@@ -36,7 +36,7 @@
         tools:context=".infraestrutura.gui.LoginActivity">
 
         <TextView
-            android:id="@+id/txtNaoRegistrado"
+            android:id="@+id/tvNaoRegistrado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -44,7 +44,7 @@
             tools:ignore="RtlHardcoded" />
 
         <TextView
-            android:id="@+id/txtRegistreSe"
+            android:id="@+id/tvRegistreSe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

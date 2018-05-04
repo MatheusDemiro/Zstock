@@ -3333,8 +3333,8 @@ public final class R {
     public static final int title_template=0x7f070095;
     public static final int top=0x7f070096;
     public static final int topPanel=0x7f070097;
-    public static final int txtNaoRegistrado=0x7f070098;
-    public static final int txtRegistreSe=0x7f070099;
+    public static final int tvNaoRegistrado =0x7f070098;
+    public static final int tvRegistreSe =0x7f070099;
     public static final int uniform=0x7f07009a;
     public static final int up=0x7f07009b;
     public static final int useLogo=0x7f07009c;
