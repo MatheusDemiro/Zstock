@@ -9,14 +9,52 @@
     tools:context=".usuario.gui.RegistroActivity">
 
     <EditText
+        android:id="@+id/edtRegistroCpfCnpj"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:drawableLeft="@drawable/ic_cpf_cnpj"
+        android:drawableStart="@drawable/ic_cpf_cnpj"
+        android:drawablePadding="10dp"
+        android:inputType="numberDecimal"
+        android:ems="10"
         android:hint="@string/zs_hint_cf_cnpj"/>
 
     <EditText
+        android:id="@+id/edtRegistroEmail"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/zs_hint_email"/>
+
+    <EditText
+        android:id="@+id/edtRegistroSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/zs_hint_email"/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/zs_hint_senha"/>
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/border_white"
+        android:text="@string/zs_btn_cadastrar" />
 
 </LinearLayout>

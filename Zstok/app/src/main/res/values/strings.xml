@@ -9,4 +9,11 @@
     <string name="zs_txt_registre_se">Registre-se</string>
 
     <string name="zs_btn_entrar">Entrar</string>
+    <string name="zs_btn_cadastrar">Cadastrar</string>
+
+    <string name="zs_excecao_campo_vazio">Preencha o campo vazio</string>
+    <string name="zs_excecao_cpf_cnpj">Digite um CPF ou CNPJ válido</string>
+    <string name="zs_excecao_senha_forte">Digite uma senha com no mínnimo 6 caracteres</string>
+    <string name="zs_excecao_email">Email digitado é inválido</string>
+    <string name="zs_excecao_database">Erro ao efetuar cadastro</string>
 </resources>
