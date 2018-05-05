@@ -699,6 +699,18 @@
     <string name="project_id" translatable="false">zstok-2cf3d</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="zs_btn_cadastrar">Cadastrar</string>
+    <string name="zs_btn_entrar">Entrar</string>
+    <string name="zs_excecao_campo_vazio">Preencha o campo vazio</string>
+    <string name="zs_excecao_cpf_cnpj">Digite um CPF ou CNPJ válido</string>
+    <string name="zs_excecao_database">Erro ao efetuar cadastro</string>
+    <string name="zs_excecao_email">Email digitado é inválido</string>
+    <string name="zs_excecao_senha_forte">Digite uma senha com no mínnimo 6 caracteres</string>
+    <string name="zs_hint_cf_cnpj">CPF/CNPJ</string>
+    <string name="zs_hint_email">Email</string>
+    <string name="zs_hint_senha">Senha</string>
+    <string name="zs_txt_registre_se">Registre-se</string>
+    <string name="zs_txt_registro">Não é registrado?</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
