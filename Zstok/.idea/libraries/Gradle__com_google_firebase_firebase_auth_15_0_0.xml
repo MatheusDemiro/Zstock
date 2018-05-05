@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/origin/Desenvolvedor
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-auth-15.0.0">
     <CLASSES>
@@ -7,4 +8,15 @@
     <JAVADOC />
     <SOURCES />
   </library>
+=======
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-auth-15.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-auth-15.0.0.aar/ce48a2459e30debcc0ff29b7cc41aec1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-auth-15.0.0.aar/ce48a2459e30debcc0ff29b7cc41aec1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+>>>>>>> projeto inicial
 </component>
