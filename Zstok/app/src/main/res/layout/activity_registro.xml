@@ -6,13 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".usuario.gui.RegistroActivity">
+    tools:context=".pessoa.gui.RegistroActivity">
+
+    <EditText
+        android:id="@+id/edtRegistroNome"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:drawableLeft="@drawable/ic_nome"
+        android:drawableStart="@drawable/ic_nome"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:ems="10"
+        android:hint="@string/zs_hint_nome"/>
 
     <EditText
         android:id="@+id/edtRegistroCpfCnpj"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:drawableLeft="@drawable/ic_cpf_cnpj"
@@ -33,7 +47,8 @@
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="@string/zs_hint_email"/>
+        android:hint="@string/zs_hint_email"
+        android:inputType="textWebEmailAddress"/>
 
     <EditText
         android:id="@+id/edtRegistroSenha"
@@ -46,7 +61,22 @@
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="@string/zs_hint_senha"/>
+        android:hint="@string/zs_hint_senha"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/edtRegistroConfirmarSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/zs_hint_confirmar_senha"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btnCadastrar"

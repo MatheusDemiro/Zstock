@@ -705,10 +705,15 @@
     <string name="zs_excecao_cpf_cnpj">Digite um CPF ou CNPJ válido</string>
     <string name="zs_excecao_database">Erro ao efetuar cadastro</string>
     <string name="zs_excecao_email">Email digitado é inválido</string>
-    <string name="zs_excecao_senha_forte">Digite uma senha com no mínnimo 6 caracteres</string>
+    <string name="zs_excecao_email_cadastrado">Esse email já esta cadastrado no sistema</string>
+    <string name="zs_excecao_senha_forte">Digite uma senha com no mínimo 6 caracteres</string>
+    <string name="zs_excecao_senhas_iguais">Digite senhas iguais</string>
     <string name="zs_hint_cf_cnpj">CPF/CNPJ</string>
+    <string name="zs_hint_confirmar_senha">Confirmar senha</string>
     <string name="zs_hint_email">Email</string>
+    <string name="zs_hint_nome">Nome</string>
     <string name="zs_hint_senha">Senha</string>
+    <string name="zs_sucesso_usuario_cadastrado">Usuário cadastrado com sucesso!</string>
     <string name="zs_txt_registre_se">Registre-se</string>
     <string name="zs_txt_registro">Não é registrado?</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

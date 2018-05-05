@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\59df10a9440d4adcdf8d1aec17b9c308\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-database-15.0.0.aar\610a6ea6fc5c8364f7b25c8fa30b286a\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:17:1-32:12
@@ -36,20 +36,20 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\User\.gradle\cache
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5c8d74e9147073e02cda0b433e77b290\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\9b1feacab718505786998a65675cfaa2\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f8967d3f7dc507a37095212dfe5be2c6\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:3:5-24
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-24:12
 		INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:11-69
@@ -64,7 +64,7 @@ MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\User\.gradle\cach
 	android:name
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:7:5-23:19
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:7:5-22:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\36b7525c1fa5b690270453f9099bd546\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\bc02704b706a8400006790d5b6204d67\AndroidManifest.xml:28:5-53:19
@@ -103,10 +103,10 @@ MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Us
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:13:9-40
-activity#com.zstok.pessoa.gui.RegistroActivity
+activity#com.zstok.infraestrutura.gui.LoginActivity
 ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:19-62
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:19-67
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
@@ -117,14 +117,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:27-74
-activity#com.zstok.infraestrutura.gui.LoginActivity
-ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:9-70
+activity#com.zstok.pessoa.gui.RegistroActivity
+ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:9-65
 	android:name
-		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:19-67
-activity#com.zstok.usuario.gui.RegistroActivity
-ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:9-66
-	android:name
-		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:19-63
+		ADDED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:19-62
 uses-sdk
 INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\User\Documents\GitKraken\Zstok\Zstok\app\src\main\AndroidManifest.xml
