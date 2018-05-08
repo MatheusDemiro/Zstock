@@ -17,10 +17,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.zstok.PessoaFisicaActivity;
 import com.zstok.PessoaJuridicaActivity;
 import com.zstok.R;
 import com.zstok.ResgatarSenhaActivity;
+import com.zstok.cardView.gui.CardProdutoActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void abrirTelaPessoaFisica(){
-        Intent intent = new Intent(getApplicationContext(), PessoaFisicaActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CardProdutoActivity.class);
         Helper.criarToast(getApplicationContext(), "Pessoa Fisica\n" + FirebaseController.getUidUsuario());
         startActivity(intent);
     }

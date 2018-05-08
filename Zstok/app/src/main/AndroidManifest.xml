@@ -21,7 +21,8 @@
         <activity android:name=".pessoa.gui.RegistroActivity" />
         <activity android:name=".PessoaFisicaActivity" />
         <activity android:name=".PessoaJuridicaActivity" />
-        <activity android:name=".ResgatarSenhaActivity"></activity>
+        <activity android:name=".ResgatarSenhaActivity" />
+        <activity android:name=".cardView.gui.CardProdutoActivity"></activity>
     </application>
 
 </manifest>
