@@ -8,12 +8,15 @@
     <string name="zs_hint_nome">Nome</string>
 
     <string name="zs_txt_registro">Não é registrado?</string>
-    <string name="zs_txt_registre_se">Registre-se</string>
+    <string name="zs_txt_registre_se"><b><u>Registre-se</u></b></string>
+    <string name="zs_txt_esqueceu_senha"><u>Não sei minha senha!</u></string>
 
     <string name="zs_btn_entrar">Entrar</string>
     <string name="zs_btn_cadastrar">Cadastrar</string>
+    <string name="zs_btn_enviar">Enviar</string>
 
     <string name="zs_sucesso_usuario_cadastrado">Usuário cadastrado com sucesso!</string>
+    <string name="zs_email_enviado_sucesso">Email enviado com sucesso</string>
 
     <string name="zs_excecao_campo_vazio">Preencha o campo vazio</string>
     <string name="zs_excecao_cpf_cnpj">Digite um CPF ou CNPJ válido</string>
@@ -22,5 +25,9 @@
     <string name="zs_excecao_email_cadastrado">Esse email já esta cadastrado no sistema</string>
     <string name="zs_excecao_database">Erro ao efetuar cadastro</string>
     <string name="zs_excecao_senhas_iguais">Digite senhas iguais</string>
+    <string name="zs_excecao_conexao_falha">Verifique sua conexão com a internet</string>
+    <string name="zs_excecao_usuario_nao_encontrado">Usuário não encontrado</string>
+    <string name="zs_excecao_usuario_senha">Usuario ou Senha inválido</string>
+
 
 </resources>
