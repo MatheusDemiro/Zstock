@@ -102,6 +102,7 @@ public class RegistroActivity extends AppCompatActivity {
     private void inserirPessoaFisica(){
         if (PessoaFisicaServices.inserirPessoaFisica(criarPessoaFisica())){
             Helper.criarToast(getApplicationContext(), getString(R.string.zs_sucesso_usuario_cadastrado));
+            abrirTelaLoginActivity();
         }
     }
     private Pessoa criarPessoa(){

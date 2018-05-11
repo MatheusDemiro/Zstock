@@ -17,14 +17,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.zstok.PessoaJuridicaActivity;
+import com.zstok.MainPessoaFisicaActivity;
 import com.zstok.R;
 import com.zstok.ResgatarSenhaActivity;
-import com.zstok.cardView.gui.CardProdutoActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
 import com.zstok.pessoa.gui.RegistroActivity;
+import com.zstok.pessoaFisica.gui.PerfilPessoaFisicaActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -121,8 +121,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     abrirTelaPessoaFisica();
-                }else{
-                    abrirTelaPessoaJuridica();
                 }
             }
             @Override
@@ -137,15 +135,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), RegistroActivity.class);
         startActivity(intent);
     }
-
     private void abrirTelaPessoaFisica(){
-        Intent intent = new Intent(getApplicationContext(), CardProdutoActivity.class);
-        Helper.criarToast(getApplicationContext(), "Pessoa Fisica\n" + FirebaseController.getUidUsuario());
-        startActivity(intent);
-    }
-    private void abrirTelaPessoaJuridica(){
-        Intent intent = new Intent(getApplicationContext(), PessoaJuridicaActivity.class);
-        Helper.criarToast(getApplicationContext(), "Pessoa Jurídica\n" + FirebaseController.getUidUsuario());
+        Intent intent = new Intent(getApplicationContext(), MainPessoaFisicaActivity.class);
         startActivity(intent);
     }
 }

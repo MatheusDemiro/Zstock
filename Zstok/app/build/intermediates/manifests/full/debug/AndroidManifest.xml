@@ -10,6 +10,13 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <!-- Required permission for App measurement to run. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -39,10 +46,16 @@
             </intent-filter>
         </activity>
         <activity android:name="com.zstok.pessoa.gui.RegistroActivity" />
-        <activity android:name="com.zstok.PessoaFisicaActivity" />
-        <activity android:name="com.zstok.PessoaJuridicaActivity" />
         <activity android:name="com.zstok.ResgatarSenhaActivity" />
-        <activity android:name="com.zstok.cardView.CardDemoActivity" />
+        <activity android:name="com.zstok.cardView.gui.CardProdutoActivity" />
+        <activity
+            android:name="com.zstok.pessoaFisica.gui.PerfilPessoaFisicaActivity"
+            android:label="@string/title_activity_pessoa_fisica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.zstok.MainPessoaFisicaActivity"
+            android:label="@string/title_activity_main_pessoa_fisica"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

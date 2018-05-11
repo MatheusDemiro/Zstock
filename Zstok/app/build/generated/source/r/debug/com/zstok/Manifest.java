@@ -9,6 +9,7 @@ package com.zstok;
 
 public final class Manifest {
   public static final class permission {
+    public static final String CAMERA="android.permission.CAMERA";
     public static final String C2D_MESSAGE="com.zstok.permission.C2D_MESSAGE";
   }
 
