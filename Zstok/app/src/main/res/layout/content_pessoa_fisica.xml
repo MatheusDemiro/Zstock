@@ -29,10 +29,10 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="60dp"/>
 
             <ImageView
-                android:id="@+id/imgPerfilAluno"
+                android:id="@+id/imgPerfilPessoaFisica"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_alignParentStart="true"
@@ -40,7 +40,8 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/ic_sem_foto"
                 android:backgroundTint="#FF96A1"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:layout_alignParentLeft="true" />
 
             <Button
                 android:id="@+id/btnAlterarNomePerfilPessoaFisica"

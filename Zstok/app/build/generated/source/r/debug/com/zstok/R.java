@@ -3967,7 +3967,7 @@ public final class R {
     public static final int ifRoom=0x7f08006c;
     public static final int image=0x7f08006d;
     public static final int imageView=0x7f08006e;
-    public static final int imgPerfilAluno=0x7f08006f;
+    public static final int imgPerfilPessoaFisica=0x7f08006f;
     public static final int info=0x7f080070;
     public static final int invisible=0x7f080071;
     public static final int italic=0x7f080072;

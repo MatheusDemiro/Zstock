@@ -991,7 +991,7 @@ int id icon_only 0x7f08006b
 int id ifRoom 0x7f08006c
 int id image 0x7f08006d
 int id imageView 0x7f08006e
-int id imgPerfilAluno 0x7f08006f
+int id imgPerfilPessoaFisica 0x7f08006f
 int id info 0x7f080070
 int id invisible 0x7f080071
 int id italic 0x7f080072

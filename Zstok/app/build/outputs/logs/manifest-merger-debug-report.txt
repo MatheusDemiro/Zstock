@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\470c67392992eb7a36885b4e85e848f7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\90f5f6b449831738b6845bbaa4057b19\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database:15.0.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-database-15.0.0.aar\07688bfbc2f83defbdef4905961a1683\AndroidManifest.xml:2:1-8:12
@@ -38,20 +38,20 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Matheus\.gradle\ca
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ad909a6a14bb2dbb54de9d49a3a3d96e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\8473452bcb1e427b13ef5141d4a4b2ef\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9fb003fddc9f4f8e16d82d988afecccf\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
 	package
 		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:3:5-24
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:2:11-69
@@ -81,8 +81,18 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
 		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:13:5-83
+MERGED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.2.aar\8a5c398a8a78647b27205dcda2f20366\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.2.aar\8a5c398a8a78647b27205dcda2f20366\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\423947916b42f4a7158443902de739d1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\423947916b42f4a7158443902de739d1\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:13:22-64
 application
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:14:5-39:19
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:15:5-40:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\4ff18a0ad5b01f270672996d2991a283\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\4ff18a0ad5b01f270672996d2991a283\AndroidManifest.xml:22:5-30:19
 MERGED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:28:5-53:19
@@ -110,59 +120,59 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Ma
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\8473452bcb1e427b13ef5141d4a4b2ef\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\8473452bcb1e427b13ef5141d4a4b2ef\AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:9-41
 	android:roundIcon
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:18:9-54
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:17:9-43
 	android:allowBackup
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:9-40
 activity#com.zstok.infraestrutura.gui.LoginActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:9-27:20
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:21:19-67
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:19-67
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.zstok.pessoa.gui.RegistroActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:28:9-65
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:29:9-65
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:28:19-62
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:29:19-62
 activity#com.zstok.ResgatarSenhaActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:29:9-59
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:30:9-59
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:29:19-56
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:30:19-56
 activity#com.zstok.cardView.gui.CardProdutoActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:30:9-70
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:31:9-70
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:30:19-67
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:31:19-67
 activity#com.zstok.pessoaFisica.gui.PerfilPessoaFisicaActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:31:9-34:59
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:32:9-35:59
 	android:label
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:33:13-65
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:34:13-65
 	android:theme
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:34:13-56
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:32:13-72
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:33:13-72
 activity#com.zstok.MainPessoaFisicaActivity
-ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:35:9-38:68
+ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:36:9-39:68
 	android:label
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:37:13-70
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:38:13-70
 	android:theme
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:38:13-56
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:36:13-53
+		ADDED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml:37:13-53
 uses-sdk
 INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Matheus\Documents\Zstok\Zstok\app\src\main\AndroidManifest.xml
@@ -259,14 +269,6 @@ ADDED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\Matheus\.gradle\c
 		ADDED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\4ff18a0ad5b01f270672996d2991a283\AndroidManifest.xml:29:13-72
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:15.0.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.0.0.aar\4ff18a0ad5b01f270672996d2991a283\AndroidManifest.xml:24:13-85
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.2.aar\8a5c398a8a78647b27205dcda2f20366\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.2.aar\8a5c398a8a78647b27205dcda2f20366\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\423947916b42f4a7158443902de739d1\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\423947916b42f4a7158443902de739d1\AndroidManifest.xml:23:5-67
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:23:22-64
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-analytics:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-15.0.2.aar\ab6a37d1dcce6bc0dcb0b8ee5a7ac8ff\AndroidManifest.xml:25:5-68
 MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Matheus\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-15.0.2.aar\8a5c398a8a78647b27205dcda2f20366\AndroidManifest.xml:25:5-68

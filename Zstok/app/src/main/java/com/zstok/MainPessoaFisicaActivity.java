@@ -50,7 +50,7 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_meu_perfil:
-                        abrirTelaMeuPerfilAlunoActivity();
+                        abrirTelaPerfilPessoaFisicaActivity();
                         return true;
                     case R.id.nav_negociacao:
                         //Activity de turmas
@@ -67,7 +67,7 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
 
     }
 
-    private void abrirTelaMeuPerfilAlunoActivity() {
+    private void abrirTelaPerfilPessoaFisicaActivity() {
         Intent intent = new Intent(getApplicationContext(), PerfilPessoaFisicaActivity.class);
         startActivity(intent);
     }
