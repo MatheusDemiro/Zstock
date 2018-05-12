@@ -61,28 +61,15 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
-        TextView tvInformacao = findViewById(R.id.tvInformacaoAlterarDadosPerfilPessoaFisica);
-
-        tvInformacao.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Helper.criarToast(getApplicationContext(), "OI");
-            }
-        });
 
         btnAlterarImagemPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Helper.criarToast(getApplicationContext(), "OI");
+                Helper.criarToast(getApplicationContext(), "Imagem Perfil");
 
             }
         });
 
-        btnAlterarImagemPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
