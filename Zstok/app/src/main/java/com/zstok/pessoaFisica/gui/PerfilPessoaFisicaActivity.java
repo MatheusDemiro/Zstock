@@ -23,11 +23,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
+import com.zstok.infraestrutura.utils.Helper;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class PerfilPessoaFisicaActivity extends AppCompatActivity
@@ -37,8 +46,9 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     private ImageView imgView;
 
     //Teste
-    private final int GALERY = 1;
-    private final int CAMERA = 0;
+    private static final int CAMERA_REQUEST_CODE = 1;
+    private StorageReference storageReference;
+    private Uri uriphoto;
     //Fim teste
 
 
@@ -60,28 +70,17 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
 
         Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
         imgView = findViewById(R.id.imgPerfilPessoaFisica);
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         btnAlterarImagemPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //Intent para abrir a câmera e tirar uma foto
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,CAMERA_REQUEST_CODE);
+                //Fim da intent
 
-                //Foto camera
-                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(takePicture, 0);//zero can be replaced with any action code
-
-                //verifica permissão de camera
-                int permissionCheck = ContextCompat.checkSelfPermission(PerfilPessoaFisicaActivity.this, Manifest.permission.CAMERA);
-                //UseCamera camera = new UseCamera();
-                //se tiver permissão tira foto
-                if(permissionCheck == PackageManager.PERMISSION_GRANTED){
-                    tirarFoto();
-                }
-                else{
-                    // solicita permissão
-                    ActivityCompat.requestPermissions(PerfilPessoaFisicaActivity.this,new String[]{
-                            Manifest.permission.CAMERA},CAMERA);
-                }
 
             }
         });
@@ -106,37 +105,21 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         });
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        switch(requestCode) {
-            case 0:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    Bitmap bitmap = null;
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),selectedImage);
-                        imgView.setImageBitmap(bitmap);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-                break;
-            case 1:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    Bitmap bitmap = null;
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),selectedImage);
-                        imgView.setImageBitmap(bitmap);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                StorageReference filepath = storageReference.child("Photos").child(uri.getLastPathSegment());
+                filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Helper.criarToast(getApplicationContext(),"Sucesso");
                     }
-                }
-                break;
+                });
         }
     }
-
 
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
     private void sair() {
