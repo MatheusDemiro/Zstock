@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainPessoaFisicaActivity"
+    tools:context=".pessoaFisica.gui.MainPessoaFisicaActivity"
     tools:showIn="@layout/app_bar_main_pessoa_fisica">
 
 </android.support.constraint.ConstraintLayout>

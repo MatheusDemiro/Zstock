@@ -26,13 +26,14 @@
         <activity android:name=".ResgatarSenhaActivity" />
         <activity android:name=".cardView.gui.CardProdutoActivity" />
         <activity
-            android:name=".pessoaFisica.gui.PerfilPessoaFisicaActivity"
+            android:name=".perfil.gui.PerfilPessoaFisicaActivity"
             android:label="@string/title_activity_pessoa_fisica"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainPessoaFisicaActivity"
+            android:name=".pessoaFisica.gui.MainPessoaFisicaActivity"
             android:label="@string/title_activity_main_pessoa_fisica"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
