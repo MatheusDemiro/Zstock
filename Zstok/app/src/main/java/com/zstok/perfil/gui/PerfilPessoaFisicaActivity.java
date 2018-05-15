@@ -42,6 +42,8 @@ import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
+import com.zstok.perfil.negocio.MenuLateralServices;
+import com.zstok.pessoaFisica.gui.MainPessoaFisicaActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -57,9 +59,9 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     private static final int CAMERA_REQUEST_CODE = 1;
     private StorageReference storageReference;
     private Uri uriphoto;
-    private File foto = null;
     //Fim teste
 
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
@@ -82,7 +84,13 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
 
         storageReference = FirebaseStorage.getInstance().getReference();
 
+        //Carregar dados do menu lateral
+        setDadosMenuLateral();
+
+        //Solicitando permissão ao usuário, caso o mesmo ainda não tenha permitido a solicitação
         permissaoGravarLerArquivos();
+
+        //Carregando foto do banco de dados no ImageView
         carregandoFoto();
 
         btnAlterarImagemPerfil.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +108,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                         drawer.closeDrawers();
                         return true;
                     case R.id.nav_negociacao:
-                        //intent para tela de negocicao
+                        //Intent para tela de negocicao
+                        abrirTelaMainPessoaFisicaActivity();
                         return true;
                     case R.id.nav_sair:
                         sair();
@@ -111,6 +120,10 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             }
         });
     }
+    //Carregando informações do menu lateral
+    private void setDadosMenuLateral(){
+        MenuLateralServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+    }
     //Permissão para ler e gravar arquivos do celular
     private void permissaoGravarLerArquivos(){
         //Trecho adiciona permissão de ler arquivos
@@ -118,7 +131,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
 
         if(ContextCompat.checkSelfPermission(PerfilPessoaFisicaActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
-            //não tem permissão: solicitar
+            //Não tem permissão: solicitar
             if(ActivityCompat.shouldShowRequestPermissionRationale(PerfilPessoaFisicaActivity.this,
                     Manifest.permission.READ_EXTERNAL_STORAGE)){
 
@@ -127,7 +140,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST);
             }
         }
-
         //Trecho adiciona permissão de gravar arquivos
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -317,9 +329,15 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    //Intent para tela de login
     private void abrirTelaLoginActivity () {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         finish();
+    }
+    //Intent para tela main
+    private void abrirTelaMainPessoaFisicaActivity() {
+        Intent intent = new Intent(getApplicationContext(), MainPessoaFisicaActivity.class);
+        startActivity(intent);
     }
 }

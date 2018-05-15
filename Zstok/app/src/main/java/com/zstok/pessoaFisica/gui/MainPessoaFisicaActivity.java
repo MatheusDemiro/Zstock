@@ -16,11 +16,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.zstok.R;
+import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
+import com.zstok.perfil.negocio.MenuLateralServices;
 
 
 public class MainPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +48,11 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Carregando informações do menu lateral
+        setDadosMenuLateral();
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -66,6 +73,9 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
                 }
             }
         });
+    }
+    private void setDadosMenuLateral(){
+        MenuLateralServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
     private void abrirTelaPerfilPessoaFisicaActivity() {
         Intent intent = new Intent(getApplicationContext(), PerfilPessoaFisicaActivity.class);

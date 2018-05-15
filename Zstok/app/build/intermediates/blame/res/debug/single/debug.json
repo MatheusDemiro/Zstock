@@ -212,10 +212,6 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header_pessoa_fisica.xml.flat",
-        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\nav_header_pessoa_fisica.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
@@ -2060,10 +2056,6 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_password.png"
     },
     {
-        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header_main_pessoa_fisica.xml.flat",
-        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\nav_header_main_pessoa_fisica.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -2126,6 +2118,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header_pessoa.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\nav_header_pessoa.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",

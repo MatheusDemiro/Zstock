@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main_pessoa_fisica"
+        app:headerLayout="@layout/nav_header_pessoa"
         app:menu="@menu/activity_main_pessoa_fisica_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
