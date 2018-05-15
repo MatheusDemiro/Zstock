@@ -48,8 +48,15 @@
         <activity
             android:name="com.zstok.pessoaFisica.gui.MainPessoaFisicaActivity"
             android:label="@string/title_activity_main_pessoa_fisica"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.zstok.perfil.gui.PerfilPessoaJuridicaActivity"
+            android:label="@string/title_activity_perfil_pessoa_juridica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.zstok.pessoaJuridica.gui.MainPessoaJuridicaActivity"
+            android:label="@string/title_activity_main_pessoa_juridica"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

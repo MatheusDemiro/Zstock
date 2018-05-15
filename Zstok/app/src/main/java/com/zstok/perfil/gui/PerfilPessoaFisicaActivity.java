@@ -26,13 +26,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -43,23 +46,31 @@ import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.perfil.negocio.MenuLateralServices;
+import com.zstok.pessoa.dominio.Pessoa;
+import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaFisica.gui.MainPessoaFisicaActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class PerfilPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private AlertDialog alertaSair;
-    private ImageView imgPerfilPessoaFisica;
+    private CircleImageView imgPerfilPessoaFisica;
 
-    //Teste
     private static final int CAMERA_REQUEST_CODE = 1;
     private StorageReference storageReference;
     private Uri uriphoto;
-    //Fim teste
+
+    private EditText edtNomePerfilFisico;
+    private EditText edtEmailPerfilFisico;
+    private EditText edtCpfPerfilFisico;
+    private EditText edtTelefonePerfilFisico;
+    private EditText edtEnderecoPerfilFisico;
 
     private NavigationView navigationView;
 
@@ -79,13 +90,23 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Instanciando as views
         Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
         imgPerfilPessoaFisica = findViewById(R.id.imgPerfilPessoaFisica);
+        edtNomePerfilFisico = findViewById(R.id.edtNomePerfilFisico);
+        edtEmailPerfilFisico = findViewById(R.id.edtEmailPerfilFisico);
+        edtCpfPerfilFisico = findViewById(R.id.edtCpfPerfilFisico);
+        edtTelefonePerfilFisico =  findViewById(R.id.edtTelefonePerfilFisico);
+        edtEnderecoPerfilFisico = findViewById(R.id.edtEnderecoPerfilFisico);
 
+        //Referencia do storage do firebase
         storageReference = FirebaseStorage.getInstance().getReference();
 
         //Carregar dados do menu lateral
         setDadosMenuLateral();
+
+        //Recuperando dados do usuário do banco
+        recuperarDados();
 
         //Solicitando permissão ao usuário, caso o mesmo ainda não tenha permitido a solicitação
         permissaoGravarLerArquivos();
@@ -104,10 +125,10 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.nav_meu_perfil:
+                    case R.id.nav_meu_perfil_fisico:
                         drawer.closeDrawers();
                         return true;
-                    case R.id.nav_negociacao:
+                    case R.id.nav_negociacao_fisico:
                         //Intent para tela de negocicao
                         abrirTelaMainPessoaFisicaActivity();
                         return true;
@@ -119,6 +140,65 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                 }
             }
         });
+
+        edtNomePerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        edtEmailPerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        edtCpfPerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        edtTelefonePerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        edtEnderecoPerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+    private void recuperarDados(){
+        FirebaseController.getFirebase().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Pessoa pessoa = dataSnapshot.child("pessoa").child(FirebaseController.getUidUsuario()).getValue(Pessoa.class);
+                PessoaFisica pessoaFisica = dataSnapshot.child("pessoaFisica").child(FirebaseController.getUidUsuario()).getValue(PessoaFisica.class);
+
+                if (pessoa != null && pessoaFisica != null){
+                    setInformacoesPerfil(pessoa, pessoaFisica);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    private void setInformacoesPerfil(Pessoa pessoa, PessoaFisica pessoaFisica){
+        edtNomePerfilFisico.setText(pessoa.getNome());
+        edtTelefonePerfilFisico.setText(pessoa.getTelefone());
+        edtCpfPerfilFisico.setText(pessoaFisica.getCpf());
+        edtEmailPerfilFisico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
     }
     //Carregando informações do menu lateral
     private void setDadosMenuLateral(){

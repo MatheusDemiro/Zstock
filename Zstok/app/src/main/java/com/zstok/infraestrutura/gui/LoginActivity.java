@@ -24,6 +24,7 @@ import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
 import com.zstok.pessoa.gui.RegistroActivity;
+import com.zstok.pessoaJuridica.gui.MainPessoaJuridicaActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -74,12 +75,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void abrirTelaRecuperacaoSenha() {
-        Intent intent = new Intent(getApplicationContext(), ResgatarSenhaActivity.class);
-        startActivity(intent);
-    }
-
     //Validando views
     private boolean validarCampos(){
         boolean verificador = true;
@@ -94,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         return verificador;
     }
-
     //Verificando se o usuário está autenticado
     private void verificarAutenticacao(String email, String senha){
         FirebaseController.getFirebaseAuthentication().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -110,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Helper.criarToast(getApplicationContext(), getString(R.string.zs_excecao_usuario_senha));
                 }
-
             }
         });
     }
@@ -120,22 +113,33 @@ public class LoginActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     abrirTelaPessoaFisica();
+                } else{
+                    abrirTelaPessoaJuridica();
                 }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
-
     }
     //Transição para a tela de registro
     private void abrirTelaRegistro(){
         Intent intent = new Intent(getApplicationContext(), RegistroActivity.class);
         startActivity(intent);
     }
+    //Transição para a tela de pessoa física
     private void abrirTelaPessoaFisica(){
         Intent intent = new Intent(getApplicationContext(), MainPessoaFisicaActivity.class);
+        startActivity(intent);
+    }
+    //Transição para a tela de pessoa jurídica
+    private void abrirTelaPessoaJuridica(){
+        Intent intent = new Intent(getApplicationContext(), MainPessoaJuridicaActivity.class);
+        startActivity(intent);
+    }
+    //Transição para a tela de recuperação de senha
+    private void abrirTelaRecuperacaoSenha() {
+        Intent intent = new Intent(getApplicationContext(), ResgatarSenhaActivity.class);
         startActivity(intent);
     }
 }

@@ -58,10 +58,10 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.nav_meu_perfil:
+                    case R.id.nav_meu_perfil_fisico:
                         abrirTelaPerfilPessoaFisicaActivity();
                         return true;
-                    case R.id.nav_negociacao:
+                    case R.id.nav_negociacao_fisico:
                         //Activity de turmas
                         drawer.closeDrawers();
                         return true;

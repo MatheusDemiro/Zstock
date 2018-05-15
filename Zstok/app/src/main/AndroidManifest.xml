@@ -3,8 +3,8 @@
     package="com.zstok">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -32,8 +32,15 @@
         <activity
             android:name=".pessoaFisica.gui.MainPessoaFisicaActivity"
             android:label="@string/title_activity_main_pessoa_fisica"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".perfil.gui.PerfilPessoaJuridicaActivity"
+            android:label="@string/title_activity_perfil_pessoa_juridica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".pessoaJuridica.gui.MainPessoaJuridicaActivity"
+            android:label="@string/title_activity_main_pessoa_juridica"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

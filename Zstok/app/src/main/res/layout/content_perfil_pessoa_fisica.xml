@@ -17,236 +17,88 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#F4717F">
+            android:layout_height="200dp">
 
             <Button
                 android:id="@+id/btnAlterarImagemPerfilPessoaFisica"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/ic_menu_camera"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_alignBottom="@+id/imgPerfilPessoaFisica"
+                android:layout_alignEnd="@+id/imgPerfilPessoaFisica"
+                android:layout_alignRight="@+id/imgPerfilPessoaFisica"
+                android:background="@drawable/ic_editar" />
 
-            <ImageView
+            <android.support.v4.widget.CircleImageView
                 android:id="@+id/imgPerfilPessoaFisica"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
-                android:background="@drawable/ic_sem_foto"
-                android:backgroundTint="#FF96A1"
+                android:background="@drawable/ic_perfil"
                 android:scaleType="centerCrop"
                 android:layout_alignParentLeft="true" />
 
-            <Button
-                android:id="@+id/btnAlterarNomePerfilPessoaFisica"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/ic_editar"
-                android:backgroundTint="#FFFFFF"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/tvNomePerfilAluno"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="55dp"
-                android:background="@null"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:hint="@string/zs_hint_nome_usuario"
-                android:textColorHint="#FFFFFF"
-                android:textSize="30sp"
-                android:textColor="#FFFFFF"
-                tools:ignore="RtlHardcoded,RtlSymmetry" />
-
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="#FFFFFF">
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnAlterarEmailPerfilPessoaFisica"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:background="@null"
-                android:drawableBottom="@drawable/ic_email"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp"/>
-
-            <TextView
-                android:id="@+id/tvEmailPerfilPessoaFisica"
+            <EditText
+                android:id="@+id/edtNomePerfilFisico"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_toRightOf="@id/btnAlterarInstituicaoPerfilAluno"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:hint="@string/zs_hint_email_usuario"
-                android:textSize="15sp"
-                tools:ignore="RtlHardcoded" />
+                android:layout_height="wrap_content"
+                android:hint="@string/zs_hint_nome"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"/>
 
-            <View
-                android:id="@+id/vwEmail"
+            <EditText
+                android:id="@+id/edtEmailPerfilFisico"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/btnAlterarEmailPerfilPessoaFisica"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:background="#E6E6E6" />
+                android:layout_height="wrap_content"
+                android:hint="@string/zs_hint_email"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"/>
 
-            <Button
-                android:id="@+id/btnAlterarDataNascimentoPerfilPessoaFisica"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/vwEmail"
-                android:background="@null"
-                android:drawableBottom="@drawable/ic_calendario"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp"/>
-
-            <TextView
-                android:id="@+id/tvDataNascimentoPerfilPessoaFisica"
+            <EditText
+                android:id="@+id/edtCpfPerfilFisico"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/vwEmail"
-                android:layout_toRightOf="@id/btnAlterarDataNascimentoPerfilPessoaFisica"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:hint="@string/zs_hint_data_nascimento_usuario"
-                android:textSize="15sp"
-                tools:ignore="RtlHardcoded" />
+                android:layout_height="wrap_content"
+                android:hint="CPF"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"/>
 
-            <View
-                android:id="@+id/vwDataNascimento"
+            <EditText
+                android:id="@+id/edtTelefonePerfilFisico"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/btnAlterarDataNascimentoPerfilPessoaFisica"
-                android:background="#E6E6E6" />
+                android:layout_height="wrap_content"
+                android:hint="Telefone"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha" />
 
-
-            <Button
-                android:id="@+id/btnAlterarInstituicaoPerfilAluno"
-                android:layout_width="60dp"
-                android:layout_height="51dp"
-                android:layout_below="@id/vwDataNascimento"
-                android:background="@null"
-                android:drawableBottom="@drawable/ic_cpf_cnpj"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp" />
-
-            <TextView
-                android:id="@+id/tvCpfPerfilPessoaFisica"
+            <EditText
+                android:id="@+id/edtEnderecoPerfilFisico"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/vwDataNascimento"
-                android:layout_toRightOf="@id/btnAlterarInstituicaoPerfilAluno"
-                android:focusable="true"
-                android:gravity="center|start"
-                android:hint="@string/zs_hint_cpf_usuario"
-                android:maxLength="100"
-                android:textSize="15sp"
-                tools:ignore="RtlHardcoded" />
+                android:layout_height="wrap_content"
+                android:hint="Endereço"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"/>
 
-            <View
-                android:id="@+id/vwCPF"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/btnAlterarInstituicaoPerfilAluno"
-                android:layout_marginLeft="60dp"
-                android:layout_marginStart="60dp"
-                android:background="#E6E6E6"/>
-
-            <Button
-                android:id="@+id/btnAlterarEnderecoPerfilAluno"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/btnAlterarInstituicaoPerfilAluno"
-                android:background="@null"
-                android:drawableBottom="@drawable/ic_endereco"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                android:id="@+id/tvEnderecoPerfilAluno"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/vwCPF"
-                android:layout_toRightOf="@+id/btnAlterarInstituicaoPerfilAluno"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:hint="Endereço do Usuário"
-                android:textSize="15sp"
-                tools:ignore="RtlHardcoded" />
-
-            <View
-                android:id="@+id/vwEndereco"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/btnAlterarEnderecoPerfilAluno"
-                android:layout_marginLeft="60dp"
-                android:layout_marginStart="60dp"
-                android:background="#E6E6E6"/>
-
-            <Button
-                android:id="@+id/btnAlterarSenhaPerfilPessoaFisica"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/vwEndereco"
-                android:background="@null"
-                android:drawableBottom="@drawable/ic_cadeado"
-                android:gravity="center_vertical"
-                android:paddingBottom="12dp"
-                tools:ignore="UnusedAttribute" />
-
-            <TextView
-                android:id="@+id/tvSenhaPerfilAluno"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/vwEndereco"
-                android:layout_toRightOf="@id/btnAlterarSenhaPerfilPessoaFisica"
-                android:focusable="true"
-                android:gravity="center_vertical"
-                android:hint="Senha do Usuário"
-                android:textSize="15sp"
-                tools:ignore="RtlHardcoded" />
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/tvInformacaoAlterarDadosPerfilPessoaFisica"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/ic_informacao" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

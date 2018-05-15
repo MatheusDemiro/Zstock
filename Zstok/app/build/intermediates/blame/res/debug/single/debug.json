@@ -48,6 +48,10 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_setinha.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_password.png.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_password.png"
     },
@@ -252,6 +256,10 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_cpf_cnpj.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_produtos.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1ee246f372b8f1aed47d007a3b71eecf\\res\\drawable-v21\\notification_action_background.xml"
     },
@@ -356,6 +364,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\content_main_pessoa_juridica.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_perfil.png.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_perfil.png"
     },
@@ -382,6 +394,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_produtos.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
@@ -446,6 +462,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_tint.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\40f23ca12c316888304fed642134eaec\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_setinha.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_setinha.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
@@ -584,6 +604,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_main_pessoa_juridica_drawer.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\menu\\activity_main_pessoa_juridica_drawer.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
@@ -624,6 +648,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1ee246f372b8f1aed47d007a3b71eecf\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_setinha.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
@@ -638,6 +666,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_calendario.png.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_calendario.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_produtos.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -928,6 +960,10 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_negociacao.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\menu_activity_perfil_pessoa_juridica_drawer.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\menu\\activity_perfil_pessoa_juridica_drawer.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\color-v23\\abc_tint_default.xml"
     },
@@ -1188,6 +1224,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_perfil_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\activity_perfil_pessoa_juridica.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1364,6 +1404,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1ee246f372b8f1aed47d007a3b71eecf\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_produtos.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\layout\\abc_list_menu_item_layout.xml"
     },
@@ -1456,6 +1500,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_setinha.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -1524,6 +1572,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\83b9e6d9ab53916f5f78c49a7c6407a9\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_produtos.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_produtos.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_editar.xml.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_editar.xml"
     },
@@ -1558,6 +1610,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\83b9e6d9ab53916f5f78c49a7c6407a9\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_app_bar_main_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\app_bar_main_pessoa_juridica.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -1704,8 +1760,16 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_perfil.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_app_bar_perfil_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\app_bar_perfil_pessoa_juridica.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_setinha.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -1896,12 +1960,20 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\83b9e6d9ab53916f5f78c49a7c6407a9\\res\\anim\\design_snackbar_out.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_setinha.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1ee246f372b8f1aed47d007a3b71eecf\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_setinha.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_setinha.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_recuperacao_senha.xml.flat",
@@ -1914,6 +1986,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\menu\\main_pessoa_juridica.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
@@ -2088,8 +2164,16 @@
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_password.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_perfil_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\content_perfil_pessoa_juridica.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\83b9e6d9ab53916f5f78c49a7c6407a9\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_produtos.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
@@ -2190,6 +2274,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\layout\\activity_main_pessoa_juridica.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
@@ -2332,6 +2420,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\menu_perfil_pessoa_juridica.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\src\\main\\res\\menu\\perfil_pessoa_juridica.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_cadeado.png.flat",
         "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_cadeado.png"
     },
@@ -2378,6 +2470,10 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\59df10a9440d4adcdf8d1aec17b9c308\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_produtos.png.flat",
+        "source": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_produtos.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitKraken\\Zstok\\Zstok\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
