@@ -17,7 +17,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp" >
+            android:layout_height="wrap_content" >
 
            <Button
                 android:id="@+id/btnAlterarImagemPerfilPessoaFisica"
@@ -28,7 +28,7 @@
                 android:layout_alignRight="@+id/imgPerfilPessoaFisica"
                 android:background="@drawable/ic_editar" />
 
-            <android.support.v4.widget.CircleImageView
+            <ImageView
                 android:id="@+id/imgPerfilPessoaFisica"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -44,76 +44,153 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/edtNomeFantasiaPerfilJuridico"
+            <TextView
+                android:id="@+id/tvNomeFantasiaPerfilJuridico"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
                 android:hint="@string/zs_hint_nome_fantasia"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
-                android:focusable="false"/>
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawableStart="@drawable/ic_nome"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"/>
 
-            <EditText
-                android:id="@+id/edtRazaoSocialPerfilJuridico"
+            <View
+                android:id="@+id/vwNomeFantasia"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
+                android:background="@color/cinzaClaro"
+                android:layout_below="@id/tvNomeFantasiaPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvRazaoSocialPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/vwNomeFantasia"
                 android:hint="@string/zs_hint_razao_social"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
-                android:focusable="false"/>
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawableStart="@drawable/ic_nome"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"/>
 
-            <EditText
-                android:id="@+id/edtEmailPerfilJuridico"
+            <View
+                android:id="@+id/vwRazaoSocial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
+                android:background="@color/cinzaClaro"
+                android:layout_below="@id/tvRazaoSocialPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvEmailPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
                 android:hint="@string/zs_hint_email"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
+                android:layout_below="@id/vwRazaoSocial"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableStart="@drawable/ic_email"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
-                android:focusable="false"/>
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left" />
 
-            <EditText
-                android:id="@+id/edtCpfPerfilJuridico"
+            <View
+                android:id="@+id/vwEmailPerfilJuridico"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
+                android:background="@color/cinzaClaro"
+                android:layout_below="@id/tvEmailPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvCnpjPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwEmailPerfilJuridico"
                 android:hint="@string/zs_hint_cnpj_usuario"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
-                android:focusable="false"/>
+                android:drawableLeft="@drawable/ic_cpf_cnpj"
+                android:drawableStart="@drawable/ic_cpf_cnpj"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left" />
 
-            <EditText
-                android:id="@+id/edtTelefonePerfilJuridico"
+            <View
+                android:id="@+id/vwCnpj"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="3dp"
+                android:background="@color/cinzaClaro"
+                android:layout_below="@id/tvCnpjPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvTelefonePerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwCnpj"
                 android:hint="@string/zs_hint_telefone_usuario"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
-                android:focusable="false"/>
+                android:drawableLeft="@drawable/ic_telefone"
+                android:drawableStart="@drawable/ic_telefone"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"/>
 
-            <EditText
-                android:id="@+id/edtEnderecoPerfilJuridico"
+            <View
+                android:id="@+id/vwTelefonePerfilJuridico"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/zs_hint_endereco_usuario"
-                android:textSize="16sp"
-                android:layout_margin="5dp"
-                android:drawableRight="@drawable/ic_setinha"
-                android:drawableEnd="@drawable/ic_setinha"/>
+                android:layout_height="3dp"
+                android:background="@color/cinzaClaro"
+                android:layout_below="@id/tvTelefonePerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tvEnderecoPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwTelefonePerfilJuridico"
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableStart="@drawable/ic_endereco"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableRight="@drawable/ic_setinha"
+                android:paddingLeft="@dimen/padding_left"
+                android:hint="@string/zs_hint_endereco_usuario"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>

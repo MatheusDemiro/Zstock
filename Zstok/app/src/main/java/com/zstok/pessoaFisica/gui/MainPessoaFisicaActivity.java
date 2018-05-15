@@ -1,10 +1,12 @@
 package com.zstok.pessoaFisica.gui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,16 +17,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.zstok.R;
+import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
-import com.zstok.perfil.negocio.MenuLateralServices;
+import com.zstok.perfil.negocio.PerfilServices;
 
 
 public class MainPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavigationView navigationView;
+    private AlertDialog alertaSair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +80,34 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         });
     }
     private void setDadosMenuLateral(){
-        MenuLateralServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
-    private void abrirTelaPerfilPessoaFisicaActivity() {
-        Intent intent = new Intent(getApplicationContext(), PerfilPessoaFisicaActivity.class);
-        startActivity(intent);
+    //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
+    private void sair () {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //define o titulo
+        builder.setTitle(getString(R.string.zs_dialogo_titulo));
+        //define a mensagem
+        builder.setMessage(getString(R.string.zs_dialogo_mensagem_sair_conta));
+        //define um botão como positivo
+        builder.setPositiveButton(getString(R.string.zs_dialogo_sim), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                FirebaseAuth.getInstance().signOut();
+                abrirTelaLoginActivity();
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton(getString(R.string.zs_dialogo_nao), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                alertaSair.dismiss();
+            }
+        });
+        //cria o AlertDialog
+        alertaSair = builder.create();
+        //Exibe
+        alertaSair.show();
     }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,5 +149,14 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void abrirTelaPerfilPessoaFisicaActivity() {
+        Intent intent = new Intent(getApplicationContext(), PerfilPessoaFisicaActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaLoginActivity() {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

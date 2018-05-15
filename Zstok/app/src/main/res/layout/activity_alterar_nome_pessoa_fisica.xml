@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    tools:context=".perfil.gui.AlterarNomePessoaFisicaActivity">
+
+    <EditText
+        android:id="@+id/edtAlterarNomePessoaFisica"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/zs_hint_nome"
+        android:drawableLeft="@drawable/ic_nome"
+        android:drawableStart="@drawable/ic_nome"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:paddingLeft="@dimen/drawable_padding" />
+
+    <Button
+        android:id="@+id/btnAlterarNomePessoaFisica"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/zs_btn_alterar_nome"/>
+
+</LinearLayout>

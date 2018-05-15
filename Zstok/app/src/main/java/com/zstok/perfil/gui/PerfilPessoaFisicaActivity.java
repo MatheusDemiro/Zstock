@@ -26,7 +26,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -45,7 +46,7 @@ import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
-import com.zstok.perfil.negocio.MenuLateralServices;
+import com.zstok.perfil.negocio.PerfilServices;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaFisica.gui.MainPessoaFisicaActivity;
@@ -54,23 +55,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class PerfilPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private AlertDialog alertaSair;
-    private CircleImageView imgPerfilPessoaFisica;
+    private ImageView imgPerfilPessoaFisica;
 
     private static final int CAMERA_REQUEST_CODE = 1;
     private StorageReference storageReference;
     private Uri uriphoto;
 
-    private EditText edtNomePerfilFisico;
-    private EditText edtEmailPerfilFisico;
-    private EditText edtCpfPerfilFisico;
-    private EditText edtTelefonePerfilFisico;
-    private EditText edtEnderecoPerfilFisico;
+    private TextView tvNomePerfilFisico;
+    private TextView tvEmailPerfilFisico;
+    private TextView tvCpfPerfilFisico;
+    private TextView tvTelefonePerfilFisico;
+    private TextView tvEnderecoPerfilFisico;
 
     private NavigationView navigationView;
 
@@ -93,11 +92,11 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         //Instanciando as views
         Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
         imgPerfilPessoaFisica = findViewById(R.id.imgPerfilPessoaFisica);
-        edtNomePerfilFisico = findViewById(R.id.edtNomePerfilFisico);
-        edtEmailPerfilFisico = findViewById(R.id.edtEmailPerfilFisico);
-        edtCpfPerfilFisico = findViewById(R.id.edtCpfPerfilFisico);
-        edtTelefonePerfilFisico =  findViewById(R.id.edtTelefonePerfilFisico);
-        edtEnderecoPerfilFisico = findViewById(R.id.edtEnderecoPerfilFisico);
+        tvNomePerfilFisico = findViewById(R.id.tvNomePerfilFisico);
+        tvEmailPerfilFisico = findViewById(R.id.tvEmailPerfilFisico);
+        tvCpfPerfilFisico = findViewById(R.id.tvCpfPerfilFisico);
+        tvTelefonePerfilFisico =  findViewById(R.id.tvTelefonePerfilFisico);
+        tvEnderecoPerfilFisico = findViewById(R.id.tvEnderecoPerfilFisico);
 
         //Referencia do storage do firebase
         storageReference = FirebaseStorage.getInstance().getReference();
@@ -141,35 +140,35 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             }
         });
 
-        edtNomePerfilFisico.setOnClickListener(new View.OnClickListener() {
+        tvNomePerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaAlterarNomeActivity();
+            }
+        });
+
+        tvEmailPerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaAlterarEmailActivity();
+            }
+        });
+
+        tvCpfPerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        edtEmailPerfilFisico.setOnClickListener(new View.OnClickListener() {
+        tvTelefonePerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        edtCpfPerfilFisico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        edtTelefonePerfilFisico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        edtEnderecoPerfilFisico.setOnClickListener(new View.OnClickListener() {
+        tvEnderecoPerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -195,14 +194,14 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         });
     }
     private void setInformacoesPerfil(Pessoa pessoa, PessoaFisica pessoaFisica){
-        edtNomePerfilFisico.setText(pessoa.getNome());
-        edtTelefonePerfilFisico.setText(pessoa.getTelefone());
-        edtCpfPerfilFisico.setText(pessoaFisica.getCpf());
-        edtEmailPerfilFisico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
+        tvNomePerfilFisico.setText(pessoa.getNome());
+        tvTelefonePerfilFisico.setText(pessoa.getTelefone());
+        tvCpfPerfilFisico.setText(pessoaFisica.getCpf());
+        tvEmailPerfilFisico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
     }
     //Carregando informações do menu lateral
     private void setDadosMenuLateral(){
-        MenuLateralServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
     //Permissão para ler e gravar arquivos do celular
     private void permissaoGravarLerArquivos(){
@@ -312,13 +311,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             });
         }
     }
-    //Obtendo URI da imagem
-    public Uri getImageUri(Context inContext, Bitmap inImage) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
     //Resgatando foto do Storage
     private void carregandoFoto(){
         StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUsuario() + ".bmp");
@@ -339,6 +331,13 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         } catch (IOException e) {
             Log.d("IOException downlaod", e.getMessage());
         }
+    }
+    //Obtendo URI da imagem
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
     }
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
     private void sair () {
@@ -418,6 +417,16 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     //Intent para tela main
     private void abrirTelaMainPessoaFisicaActivity() {
         Intent intent = new Intent(getApplicationContext(), MainPessoaFisicaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração do nome
+    private void abrirTelaAlterarNomeActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaFisicaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração do email
+    private void abrirTelaAlterarEmailActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaFisicaActivity.class);
         startActivity(intent);
     }
 }
