@@ -90,8 +90,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Instanciando as views
-        Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaFisica);
-        imgPerfilPessoaFisica = findViewById(R.id.imgPerfilPessoaFisica);
+        Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaJuridica);
+        imgPerfilPessoaFisica = findViewById(R.id.imgPerfilPessoaJuridica);
         tvNomePerfilFisico = findViewById(R.id.tvNomePerfilFisico);
         tvEmailPerfilFisico = findViewById(R.id.tvEmailPerfilFisico);
         tvCpfPerfilFisico = findViewById(R.id.tvCpfPerfilFisico);

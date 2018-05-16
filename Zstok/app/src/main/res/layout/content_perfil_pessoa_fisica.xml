@@ -20,16 +20,16 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnAlterarImagemPerfilPessoaFisica"
+                android:id="@+id/btnAlterarImagemPerfilPessoaJuridica"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignBottom="@+id/imgPerfilPessoaFisica"
-                android:layout_alignEnd="@+id/imgPerfilPessoaFisica"
-                android:layout_alignRight="@+id/imgPerfilPessoaFisica"
+                android:layout_alignBottom="@+id/imgPerfilPessoaJuridica"
+                android:layout_alignEnd="@+id/imgPerfilPessoaJuridica"
+                android:layout_alignRight="@+id/imgPerfilPessoaJuridica"
                 android:background="@drawable/ic_editar" />
 
             <ImageView
-                android:id="@+id/imgPerfilPessoaFisica"
+                android:id="@+id/imgPerfilPessoaJuridica"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="20dp"

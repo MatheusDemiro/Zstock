@@ -3928,7 +3928,7 @@ public final class R {
     public static final int blocking=0x7f080025;
     public static final int bottom=0x7f080026;
     public static final int btnAlterarEmailPessoaFisica=0x7f080027;
-    public static final int btnAlterarImagemPerfilPessoaFisica=0x7f080028;
+    public static final int btnAlterarImagemPerfilPessoaJuridica =0x7f080028;
     public static final int btnAlterarNomePessoaFisica=0x7f080029;
     public static final int btnCadastrar=0x7f08002a;
     public static final int btnEntrar=0x7f08002b;
@@ -3998,7 +3998,7 @@ public final class R {
     public static final int ifRoom=0x7f08006b;
     public static final int image=0x7f08006c;
     public static final int imgNavHeaderPessoa=0x7f08006d;
-    public static final int imgPerfilPessoaFisica=0x7f08006e;
+    public static final int imgPerfilPessoaJuridica =0x7f08006e;
     public static final int info=0x7f08006f;
     public static final int invisible=0x7f080070;
     public static final int italic=0x7f080071;
