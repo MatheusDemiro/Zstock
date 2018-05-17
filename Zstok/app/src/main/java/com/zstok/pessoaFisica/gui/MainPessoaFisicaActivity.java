@@ -71,7 +71,7 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
                         drawer.closeDrawers();
                         return true;
                     case R.id.nav_sair:
-                        //sair
+                        sair();
                         return true;
                     default:
                         return false;

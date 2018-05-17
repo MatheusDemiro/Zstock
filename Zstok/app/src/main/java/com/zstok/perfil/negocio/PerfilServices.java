@@ -7,6 +7,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.zstok.perfil.persistencia.PerfilDAO;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
+import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
 public class PerfilServices {
     public static void setNomeEmailView(NavigationView navigationView, FirebaseUser user){
@@ -27,7 +28,13 @@ public class PerfilServices {
     public static boolean alterarCpf(PessoaFisica pessoaFisica){
         return PerfilDAO.insereCpf(pessoaFisica);
     }
+    public static boolean alterarCnpj(PessoaJuridica pessoaJuridica){
+        return PerfilDAO.insereCnpj(pessoaJuridica);
+    }
     public static boolean alterarDataNascimento(PessoaFisica pessoaFisica){
         return PerfilDAO.insereDataNascimento(pessoaFisica);
+    }
+    public static boolean alterarRazaoSocial(String razaoSocial){
+        return PerfilDAO.insereRazaoSocial(razaoSocial);
     }
 }

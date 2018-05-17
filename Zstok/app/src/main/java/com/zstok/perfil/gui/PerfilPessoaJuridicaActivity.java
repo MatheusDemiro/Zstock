@@ -1,6 +1,9 @@
 package com.zstok.perfil.gui;
 
 import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -15,6 +18,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -25,21 +29,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
+import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
+import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.perfil.negocio.PerfilServices;
 import com.zstok.pessoa.dominio.Pessoa;
-import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -50,6 +61,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     private static final int CAMERA_REQUEST_CODE = 1;
     private StorageReference storageReference;
     private Uri uriphoto;
+    private AlertDialog alertaSair;
 
     private ImageView imgPerfilPessoaJuridica;
     private TextView tvNomeFantasiaPerfilJuridico;
@@ -67,7 +79,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -104,42 +116,65 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         tvNomeFantasiaPerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA DE ALTERAR NOME
+                abrirTelaAlterarNomeActivity();
+
             }
         });
 
         tvRazaoSocialPerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA DE ALTERAR RAZAO SOCIAL
+                abrirTelaAlterarRazaoSocialActivity();
             }
         });
 
         tvEmailPerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA DE ALTERAR EMAIL *** MESMA QUE PERFIL FISICO
+                abrirTelaAlterarEmailActivity();
             }
         });
 
         tvCnpjPerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA PARA ALTERAR CPNJ *** LEMBRAR DE VALIDAR O MESMO
+                abrirTelaAlterarCnpjActivity();
             }
         });
 
         tvTelefonePerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA PARA ALTERAR TELEFONE *** MESMA QUE PERFIL FISICO
+                abrirTelaAlterarTelefoneActivity();
             }
         });
 
         tvEnderecoPerfilJuridico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TELA PARA ALTERAR ENDEREÇO *** MESMA QUE PERFIL FISICO
+                abrirTelaAlterarEnderecoActivity();
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_meu_perfil_juridico:
+                        return true;
+                    case R.id.nav_negociacao_juridico:
+                        //Função abrir tela negociacao
+                        drawer.closeDrawers();
+                        return true;
+                    case R.id.nav_produtos:
+                        //Função abrir tela produtos
+                        return true;
+                    case R.id.nav_sair:
+                        sair();
+                        return true;
+                    default:
+                        return false;
+                }
             }
         });
     }
@@ -162,12 +197,16 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             }
         });
     }
+
     private void setInformacoesPerfil(Pessoa pessoa, PessoaJuridica pessoaJuridica){
-        tvNomeFantasiaPerfilJuridico.setText(pessoaJuridica.getNomeFantasia());
+        tvNomeFantasiaPerfilJuridico.setText(pessoa.getNome());
         tvTelefonePerfilJuridico.setText(pessoa.getTelefone());
         tvCnpjPerfilJuridico.setText(pessoaJuridica.getCnpj());
         tvEmailPerfilJuridico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
+        tvEnderecoPerfilJuridico.setText(pessoa.getEndereco());
+        tvRazaoSocialPerfilJuridico.setText(pessoaJuridica.getRazaoSocial());
     }
+
     private void setDadosMenuLateral(){
         PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
@@ -233,11 +272,128 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
                     Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
         }
     }
+
     private void tirarFoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, CAMERA_REQUEST_CODE);
         }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+            if (data !=  null) {
+                Bundle extras = data.getExtras();
+                if (extras != null) {
+                    Bitmap bitmap = (Bitmap) extras.get("data");
+                    imgPerfilPessoaJuridica.setImageBitmap(bitmap);
+                    uriphoto = getImageUri(getApplicationContext(), bitmap);
+                    uploadFoto();
+                }
+            }
+        }
+    }
+
+    private void uploadFoto(){
+
+        final double porcentagemUploadFoto = 100.0;
+
+        if (uriphoto != null){
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Salvando foto...");
+            progressDialog.show();
+
+            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() +".bmp");
+            ref.putFile(uriphoto).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    progressDialog.dismiss();
+                    Helper.criarToast(PerfilPessoaJuridicaActivity.this, "Sucesso!");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    progressDialog.dismiss();
+                    Helper.criarToast(PerfilPessoaJuridicaActivity.this, "Falhou!"+e.getMessage());
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    double progress = (porcentagemUploadFoto * taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                    progressDialog.setMessage("Salvando " + (int)progress+"%");
+                }
+            });
+        }
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    private void abrirTelaAlterarNomeActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarEmailActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarTelefoneActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarTelefonePessoaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarEnderecoActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarEnderecoPessoaActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaAlterarCnpjActivity() {
+        Intent intent = new Intent(getApplicationContext(),AlterarCnpjPessoaJuridicaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarRazaoSocialActivity() {
+        Intent intent = new Intent(getApplicationContext(),AlterarRazaoSocialPessoaJuridicaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para tela de login
+    private void abrirTelaLoginActivity () {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void sair () {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //define o titulo
+        builder.setTitle(getString(R.string.zs_dialogo_titulo));
+        //define a mensagem
+        builder.setMessage(getString(R.string.zs_dialogo_mensagem_sair_conta));
+        //define um botão como positivo
+        builder.setPositiveButton(getString(R.string.zs_dialogo_sim), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                FirebaseAuth.getInstance().signOut();
+                abrirTelaLoginActivity();
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton(getString(R.string.zs_dialogo_nao), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                alertaSair.dismiss();
+            }
+        });
+        //cria o AlertDialog
+        alertaSair = builder.create();
+        //Exibe
+        alertaSair.show();
     }
 
     @Override

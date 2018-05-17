@@ -14,6 +14,7 @@ import com.zstok.R;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
+import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
 public class PerfilDAO {
     public static void setNomeEmailView(final NavigationView navigationView, final FirebaseUser user){
@@ -112,6 +113,16 @@ public class PerfilDAO {
         }
         return verificador;
     }
+    public static boolean insereCnpj(PessoaJuridica pessoaJuridica){
+        boolean verificador = true;
+
+        try{
+            FirebaseController.getFirebase().child("pessoaJuridica").child(FirebaseController.getUidUser()).child("cnpj").setValue(pessoaJuridica.getCnpj());
+        } catch (DatabaseException e){
+            verificador = false;
+        }
+        return verificador;
+    }
     public static boolean insereDataNascimento(PessoaFisica pessoaFisica){
         boolean verificador = true;
 
@@ -122,4 +133,16 @@ public class PerfilDAO {
         }
         return verificador;
     }
+
+    public static boolean insereRazaoSocial(String razaoSocial){
+        boolean verificador = true;
+
+        try{
+            FirebaseController.getFirebase().child("pessoaJuridica").child(FirebaseController.getUidUser()).child("razaoSocial").setValue(razaoSocial);
+        } catch (DatabaseException e){
+            verificador = false;
+        }
+        return verificador;
+    }
+
 }

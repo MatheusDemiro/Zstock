@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".perfil.gui.AlterarRazaoSocialPessoaJuridicaActivity">
+
+    <EditText
+        android:id="@+id/edtAlterarRazaoSocial"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Razão Social"
+        android:drawableLeft="@drawable/ic_nome"
+        android:drawableStart="@drawable/ic_nome"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:paddingLeft="@dimen/drawable_padding" />
+
+    <Button
+        android:id="@+id/btnAlterarRazaoSocial"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Alterar Razão Social"/>
+
+</LinearLayout>

@@ -64,6 +64,8 @@
         <activity android:name="com.zstok.perfil.gui.AlterarCpfPessoaFisicaActivity" />
         <activity android:name="com.zstok.perfil.gui.AlterarTelefonePessoaActivity" />
         <activity android:name="com.zstok.perfil.gui.AlterarEnderecoPessoaActivity" />
+        <activity android:name="com.zstok.perfil.gui.AlterarRazaoSocialPessoaJuridicaActivity" />
+        <activity android:name="com.zstok.perfil.gui.AlterarCnpjPessoaJuridicaActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
