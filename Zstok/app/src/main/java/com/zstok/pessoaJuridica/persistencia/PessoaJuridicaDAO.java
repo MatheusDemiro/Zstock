@@ -5,7 +5,7 @@ import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
 public class PessoaJuridicaDAO {
     public static boolean inserirPessoaJuridica(PessoaJuridica pessoaJuridica){
-        String uidUsuario = FirebaseController.getUidUsuario();
+        String uidUsuario = FirebaseController.getUidUser();
 
         FirebaseController.getFirebase().child("pessoaJuridica").child(uidUsuario).setValue(pessoaJuridica);
 

@@ -10,14 +10,8 @@ import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.EmailAuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
@@ -25,24 +19,24 @@ import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
 import com.zstok.perfil.negocio.PerfilServices;
 
-public class AlterarEmailPessoaFisicaActivity extends AppCompatActivity {
+public class AlterarEmailPessoaActivity extends AppCompatActivity {
 
-    private EditText edtAlterarEmailPessoaFisica;
-    private EditText edtSenhaPessoaFisica;
+    private EditText edtAlterarEmailPessoa;
+    private EditText edtSenhaPessoa;
     private VerificaConexao verificaConexao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alterar_email_pessoa_fisica);
+        setContentView(R.layout.activity_alterar_email_pessoa);
 
         verificaConexao = new VerificaConexao(this);
 
-        edtAlterarEmailPessoaFisica = findViewById(R.id.edtAlterarEmailPessoaFisica);
-        edtSenhaPessoaFisica = findViewById(R.id.edtSenhaPessoaFisica);
-        Button btnAlterarEmailPessoaFisica = findViewById(R.id.btnAlterarEmailPessoaFisica);
+        edtAlterarEmailPessoa = findViewById(R.id.edtAlterarEmailPessoa);
+        edtSenhaPessoa = findViewById(R.id.edtSenhaPessoa);
+        Button btnAlterarEmailPessoa = findViewById(R.id.btnAlterarEmailPessoa);
 
-        btnAlterarEmailPessoaFisica.setOnClickListener(new View.OnClickListener() {
+        btnAlterarEmailPessoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (verificaConexao.isConected()){
@@ -56,18 +50,18 @@ public class AlterarEmailPessoaFisicaActivity extends AppCompatActivity {
     private boolean validarCampos(){
         boolean verificador = true;
 
-        if (edtAlterarEmailPessoaFisica.getText().toString().isEmpty() ||
-                edtAlterarEmailPessoaFisica.getText().toString().trim().length() == 0){
-            edtAlterarEmailPessoaFisica.setError(getString(R.string.zs_excecao_campo_vazio));
+        if (edtAlterarEmailPessoa.getText().toString().isEmpty() ||
+                edtAlterarEmailPessoa.getText().toString().trim().length() == 0){
+            edtAlterarEmailPessoa.setError(getString(R.string.zs_excecao_campo_vazio));
             verificador = false;
         }
-        if (edtSenhaPessoaFisica.getText().toString().isEmpty() ||
-                edtSenhaPessoaFisica.getText().toString().trim().length() == 0){
-            edtSenhaPessoaFisica.setError(getString(R.string.zs_excecao_campo_vazio));
+        if (edtSenhaPessoa.getText().toString().isEmpty() ||
+                edtSenhaPessoa.getText().toString().trim().length() == 0){
+            edtSenhaPessoa.setError(getString(R.string.zs_excecao_campo_vazio));
             verificador = false;
         }
-        if (!Helper.verificaExpressaoRegularEmail(edtAlterarEmailPessoaFisica.getText().toString())){
-            edtAlterarEmailPessoaFisica.setError(getString(R.string.zs_excecao_email));
+        if (!Helper.verificaExpressaoRegularEmail(edtAlterarEmailPessoa.getText().toString())){
+            edtAlterarEmailPessoa.setError(getString(R.string.zs_excecao_email));
             verificador = false;
         }
         return verificador;
@@ -75,14 +69,14 @@ public class AlterarEmailPessoaFisicaActivity extends AppCompatActivity {
     //Validando email e senha
     private void validarEmailSenha(){
         FirebaseController.getFirebaseAuthentication().signInWithEmailAndPassword(FirebaseController.getFirebaseAuthentication()
-                .getCurrentUser().getEmail(), edtSenhaPessoaFisica.getText().toString())
+                .getCurrentUser().getEmail(), edtSenhaPessoa.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    alterarEmail(edtAlterarEmailPessoaFisica.getText().toString(), edtSenhaPessoaFisica.getText().toString());
+                    alterarEmail(edtAlterarEmailPessoa.getText().toString(), edtSenhaPessoa.getText().toString());
                 } else {
-                    edtSenhaPessoaFisica.setError(getString(R.string.zs_excecao_senha));
+                    edtSenhaPessoa.setError(getString(R.string.zs_excecao_senha));
                 }
             }
         });

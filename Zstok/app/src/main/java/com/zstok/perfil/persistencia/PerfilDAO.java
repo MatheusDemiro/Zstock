@@ -1,16 +1,9 @@
 package com.zstok.perfil.persistencia;
 
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
-import com.google.firebase.auth.FirebaseAuthRecentLoginRequiredException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +13,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.zstok.R;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.pessoa.dominio.Pessoa;
+import com.zstok.pessoaFisica.dominio.PessoaFisica;
 
 public class PerfilDAO {
     public static void setNomeEmailView(final NavigationView navigationView, final FirebaseUser user){
@@ -58,7 +52,7 @@ public class PerfilDAO {
         boolean verificador;
 
         try {
-            FirebaseController.getFirebase().child("pessoa").child(FirebaseController.getUidUsuario()).child("nome").setValue(novoNome);
+            FirebaseController.getFirebase().child("pessoa").child(FirebaseController.getUidUser()).child("nome").setValue(novoNome);
             verificador = true;
         }catch (DatabaseException e){
             verificador = false;
@@ -83,6 +77,47 @@ public class PerfilDAO {
             */
 
         } catch (DatabaseException e) {
+            verificador = false;
+        }
+        return verificador;
+    }
+    public static boolean insereTelefone(String novoTelefone){
+        boolean verificador;
+
+        try {
+            FirebaseController.getFirebase().child("pessoa").child(FirebaseController.getUidUser()).child("telefone").setValue(novoTelefone);
+            verificador = true;
+        }catch (DatabaseException e){
+            verificador = false;
+        }
+        return verificador;
+    }
+    public static boolean insereEndereco(Pessoa pessoa){
+        boolean verificador = true;
+
+        try{
+            FirebaseController.getFirebase().child("pessoa").child(FirebaseController.getUidUser()).child("endereco").setValue(pessoa.getEndereco());
+        } catch (DatabaseException e){
+            verificador = false;
+        }
+        return verificador;
+    }
+    public static boolean insereCpf(PessoaFisica pessoaFisica){
+        boolean verificador = true;
+
+        try{
+            FirebaseController.getFirebase().child("pessoaFisica").child(FirebaseController.getUidUser()).child("cpf").setValue(pessoaFisica.getCpf());
+        } catch (DatabaseException e){
+            verificador = false;
+        }
+        return verificador;
+    }
+    public static boolean insereDataNascimento(PessoaFisica pessoaFisica){
+        boolean verificador = true;
+
+        try{
+            FirebaseController.getFirebase().child("pessoaFisica").child(FirebaseController.getUidUser()).child("dataNascimento").setValue(pessoaFisica.getDataNascimento());
+        } catch (DatabaseException e){
             verificador = false;
         }
         return verificador;

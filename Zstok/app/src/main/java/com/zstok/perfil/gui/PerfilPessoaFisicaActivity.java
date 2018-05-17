@@ -70,6 +70,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     private TextView tvCpfPerfilFisico;
     private TextView tvTelefonePerfilFisico;
     private TextView tvEnderecoPerfilFisico;
+    private TextView tvDataNascimentoPerfilFisico;
 
     private NavigationView navigationView;
 
@@ -97,6 +98,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         tvCpfPerfilFisico = findViewById(R.id.tvCpfPerfilFisico);
         tvTelefonePerfilFisico =  findViewById(R.id.tvTelefonePerfilFisico);
         tvEnderecoPerfilFisico = findViewById(R.id.tvEnderecoPerfilFisico);
+        tvDataNascimentoPerfilFisico = findViewById(R.id.tvDataNascimentoPerfilFisico);
+        TextView tvEnderecoPerfilFisico = findViewById(R.id.tvEnderecoPerfilFisico);
 
         //Referencia do storage do firebase
         storageReference = FirebaseStorage.getInstance().getReference();
@@ -106,6 +109,11 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
 
         //Recuperando dados do usuário do banco
         recuperarDados();
+
+        //Máscaras cpf, telefone e data de nascimento
+        Helper.mascaraCpf(tvCpfPerfilFisico);
+        Helper.mascaraTelefone(tvTelefonePerfilFisico);
+        Helper.mascaraDataNascimento(tvDataNascimentoPerfilFisico);
 
         //Solicitando permissão ao usuário, caso o mesmo ainda não tenha permitido a solicitação
         permissaoGravarLerArquivos();
@@ -157,21 +165,28 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         tvCpfPerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                abrirTelaAlterarCpfActivity();
             }
         });
 
         tvTelefonePerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                abrirTelaAlterarTelefoneActivity();
             }
         });
 
         tvEnderecoPerfilFisico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                abrirTelaAlterarEnderecoActivity();
+            }
+        });
 
+        tvDataNascimentoPerfilFisico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaAlterarDataNascimentoActivity();
             }
         });
     }
@@ -179,8 +194,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         FirebaseController.getFirebase().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Pessoa pessoa = dataSnapshot.child("pessoa").child(FirebaseController.getUidUsuario()).getValue(Pessoa.class);
-                PessoaFisica pessoaFisica = dataSnapshot.child("pessoaFisica").child(FirebaseController.getUidUsuario()).getValue(PessoaFisica.class);
+                Pessoa pessoa = dataSnapshot.child("pessoa").child(FirebaseController.getUidUser()).getValue(Pessoa.class);
+                PessoaFisica pessoaFisica = dataSnapshot.child("pessoaFisica").child(FirebaseController.getUidUser()).getValue(PessoaFisica.class);
 
                 if (pessoa != null && pessoaFisica != null){
                     setInformacoesPerfil(pessoa, pessoaFisica);
@@ -195,9 +210,11 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     private void setInformacoesPerfil(Pessoa pessoa, PessoaFisica pessoaFisica){
         tvNomePerfilFisico.setText(pessoa.getNome());
-        tvTelefonePerfilFisico.setText(pessoa.getTelefone());
-        tvCpfPerfilFisico.setText(pessoaFisica.getCpf());
         tvEmailPerfilFisico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
+        tvCpfPerfilFisico.setText(pessoaFisica.getCpf());
+        tvTelefonePerfilFisico.setText(pessoa.getTelefone());
+        tvEnderecoPerfilFisico.setText(pessoa.getEndereco());
+        tvDataNascimentoPerfilFisico.setText(pessoaFisica.getDataNascimento());
     }
     //Carregando informações do menu lateral
     private void setDadosMenuLateral(){
@@ -262,7 +279,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             }
         }
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -289,7 +305,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             progressDialog.setTitle("Salvando foto...");
             progressDialog.show();
 
-            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUsuario() +".bmp");
+            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() +".bmp");
             ref.putFile(uriphoto).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
@@ -313,7 +329,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     //Resgatando foto do Storage
     private void carregandoFoto(){
-        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUsuario() + ".bmp");
+        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() + ".bmp");
 
         try {
             final File localFile = File.createTempFile("images", "bmp");
@@ -374,7 +390,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -396,7 +411,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected (MenuItem item){
@@ -421,12 +435,32 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     //Intent para a tela de alteração do nome
     private void abrirTelaAlterarNomeActivity(){
-        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaFisicaActivity.class);
+        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaActivity.class);
         startActivity(intent);
     }
     //Intent para a tela de alteração do email
     private void abrirTelaAlterarEmailActivity(){
-        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaFisicaActivity.class);
+        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração do telefone
+    private void abrirTelaAlterarTelefoneActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarTelefonePessoaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração do endereço
+    private void abrirTelaAlterarEnderecoActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarEnderecoPessoaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração do cpf
+    private void abrirTelaAlterarCpfActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarCpfPessoaFisicaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para a tela de alteração da data de nascimento
+    private void abrirTelaAlterarDataNascimentoActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarDataNascimentoPessoaFisicaActivity.class);
         startActivity(intent);
     }
 }

@@ -16,17 +16,17 @@ public class ValidarCpfCnpj {
     }
     //Método criado pela equipe
     public static boolean isCpfCnpj(String s){
-        if (s.length() == 11){
-            return true;//Cpf
-        } else {
-            return false;//Cnpj
-        }
+        return s.length() == 11;
     }
     public static boolean isValidarCPF(String cpf) {
-        Integer digito1 = calcularDigito(cpf.substring(0, 9), pesoCPF);
-        Integer digito2 = calcularDigito(cpf.substring(0, 9) + digito1, pesoCPF);
+        if (isCpfCnpj(cpf)) {
+            Integer digito1 = calcularDigito(cpf.substring(0, 9), pesoCPF);
+            Integer digito2 = calcularDigito(cpf.substring(0, 9) + digito1, pesoCPF);
 
-        return cpf.equals(cpf.substring(0, 9) + digito1.toString() + digito2.toString());
+            return cpf.equals(cpf.substring(0, 9) + digito1.toString() + digito2.toString());
+        } else {
+            return false;
+        }
     }
     public static boolean isValidarCNPJ(String cnpj) {
         Integer digito1 = calcularDigito(cnpj.substring(0,12), pesoCNPJ);

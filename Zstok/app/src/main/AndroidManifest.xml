@@ -41,12 +41,12 @@
             android:name=".pessoaJuridica.gui.MainPessoaJuridicaActivity"
             android:label="@string/title_activity_main_pessoa_juridica"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".perfil.gui.AlterarEmailPessoaFisicaActivity" />
-        <activity android:name=".perfil.gui.AlterarNomePessoaFisicaActivity" />
+        <activity android:name=".perfil.gui.AlterarEmailPessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarNomePessoaActivity" />
         <activity android:name=".perfil.gui.AlterarDataNascimentoPessoaFisicaActivity" />
         <activity android:name=".perfil.gui.AlterarCpfPessoaFisicaActivity" />
-        <activity android:name=".perfil.gui.AlterarTelefonePessoaFisicaActivity" />
-        <activity android:name=".perfil.gui.AlterarEnderecoPessoaFisicaActivity"></activity>
+        <activity android:name=".perfil.gui.AlterarTelefonePessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarEnderecoPessoaActivity"></activity>
     </application>
 
 </manifest>

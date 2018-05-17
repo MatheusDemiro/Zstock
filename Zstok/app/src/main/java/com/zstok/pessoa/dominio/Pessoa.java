@@ -3,13 +3,13 @@ package com.zstok.pessoa.dominio;
 public class Pessoa {
     private String nome;
     private String telefone;
-    private String endreco;
+    private String endereco;
 
-    public String getEndreco() {
-        return endreco;
+    public String getEndereco() {
+        return endereco;
     }
-    public void setEndreco(String endreco) {
-        this.endreco = endreco;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
     public String getNome() {
         return nome;

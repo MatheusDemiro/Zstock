@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".perfil.gui.AlterarEmailPessoaFisicaActivity">
+    tools:context=".perfil.gui.AlterarEmailPessoaActivity">
 
     <EditText
-        android:id="@+id/edtAlterarEmailPessoaFisica"
+        android:id="@+id/edtAlterarEmailPessoa"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/zs_hint_novo_email"
@@ -17,22 +17,22 @@
         android:layout_marginTop="50dp"
         android:drawableLeft="@drawable/ic_email"
         android:drawableStart="@drawable/ic_email"
-        android:drawablePadding="10dp"
+        android:drawablePadding="@dimen/drawable_padding"
         android:inputType="textWebEmailAddress"/>
 
     <EditText
-        android:id="@+id/edtSenhaPessoaFisica"
+        android:id="@+id/edtSenhaPessoa"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/zs_hint_digite_senha"
         android:padding="10dp"
         android:drawableLeft="@drawable/ic_cadeado"
         android:drawableStart="@drawable/ic_cadeado"
-        android:drawablePadding="10dp"
+        android:drawablePadding="@dimen/drawable_padding"
         android:inputType="textWebPassword" />
 
     <Button
-        android:id="@+id/btnAlterarEmailPessoaFisica"
+        android:id="@+id/btnAlterarEmailPessoa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/zs_btn_alterar_email"/>

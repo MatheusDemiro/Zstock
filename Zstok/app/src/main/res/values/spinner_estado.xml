@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_estado">
+        <item>Selecione o seu estado</item>
+        <item>AC - Acre</item>
+        <item>Al - Alagoas</item>
+        <item>AP - Amapá</item>
+        <item>AM - Amazonas</item>
+        <item>BA - Bahia</item>
+        <item>CE - Ceará</item>
+        <item>DF - Distrito Federal</item>
+        <item>ES - Espirito Santo</item>
+        <item>GO - Goiás</item>
+        <item>MA - Maranhão</item>
+        <item>MT - Mato Grosso</item>
+        <item>MS - Mato Grosso do Sul</item>
+        <item>MG - Minas Gerais</item>
+        <item>PA - Pará</item>
+        <item>PB - Paraíba</item>
+        <item>PR - Paraná</item>
+        <item>PE - Pernambuco</item>
+        <item>PI - Piauí</item>
+        <item>RJ - Rio de Janeiro</item>
+        <item>RN - Rio Grande do Norte</item>
+        <item>RS - Rio Grande do Sul</item>
+        <item>RO - Rondônia</item>
+        <item>RR - Roraima</item>
+        <item>SC - Santa Catarina</item>
+        <item>SP - São Paulo</item>
+        <item>SE - Sergipe</item>
+        <item>TO - Tocantins</item>
+
+    </string-array>
+</resources>

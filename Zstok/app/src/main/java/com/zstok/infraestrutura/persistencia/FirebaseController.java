@@ -20,7 +20,7 @@ public class FirebaseController {
         }
         return referenceAuthentication;
     }
-    public static String getUidUsuario(){
+    public static String getUidUser(){
         return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 

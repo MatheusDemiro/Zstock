@@ -148,8 +148,8 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         FirebaseController.getFirebase().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Pessoa pessoa = dataSnapshot.child("pessoa").child(FirebaseController.getUidUsuario()).getValue(Pessoa.class);
-                PessoaJuridica pessoaJuridica = dataSnapshot.child("pessoaJuridica").child(FirebaseController.getUidUsuario()).getValue(PessoaJuridica.class);
+                Pessoa pessoa = dataSnapshot.child("pessoa").child(FirebaseController.getUidUser()).getValue(Pessoa.class);
+                PessoaJuridica pessoaJuridica = dataSnapshot.child("pessoaJuridica").child(FirebaseController.getUidUser()).getValue(PessoaJuridica.class);
 
                 if (pessoa != null && pessoaJuridica != null){
                     setInformacoesPerfil(pessoa, pessoaJuridica);
@@ -200,7 +200,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     }
 
     private void carregandoFoto(){
-        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUsuario() + ".bmp");
+        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() + ".bmp");
 
         try {
             final File localFile = File.createTempFile("images", "bmp");

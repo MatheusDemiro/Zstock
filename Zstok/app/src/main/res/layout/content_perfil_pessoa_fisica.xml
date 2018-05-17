@@ -55,6 +55,7 @@
                 android:gravity="center_vertical"
                 android:hint="@string/zs_hint_nome"
                 android:textSize="18sp"
+                android:textColor="@color/preto"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
@@ -80,6 +81,7 @@
                 android:gravity="center_vertical"
                 android:hint="@string/zs_hint_email"
                 android:textSize="18sp"
+                android:textColor="@color/preto"
                 android:layout_margin="5dp"
                 android:layout_below="@id/vwNomePerfilFisico"
                 android:drawableLeft="@drawable/ic_email"
@@ -107,6 +109,7 @@
                 android:layout_below="@id/vwEmailPerfilFisico"
                 android:hint="@string/zs_hint_cpf_usuario"
                 android:textSize="18sp"
+                android:textColor="@color/preto"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
@@ -133,6 +136,7 @@
                 android:layout_below="@id/vwCpfPerfilFisico"
                 android:hint="@string/zs_hint_telefone_usuario"
                 android:textSize="18sp"
+                android:textColor="@color/preto"
                 android:layout_margin="5dp"
                 android:drawableRight="@drawable/ic_setinha"
                 android:drawableEnd="@drawable/ic_setinha"
@@ -164,7 +168,8 @@
                 android:drawableRight="@drawable/ic_setinha"
                 android:paddingLeft="@dimen/padding_left"
                 android:hint="@string/zs_hint_endereco_usuario"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/preto"/>
 
             <View
                 android:id="@+id/vwEnderecoPerfilFisico"
@@ -190,7 +195,8 @@
                 android:hint="@string/zs_hint_data_nascimento_usuario"
                 android:paddingLeft="@dimen/padding_left"
                 android:paddingStart="@dimen/padding_left"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/preto"/>
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>
