@@ -89,8 +89,8 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //InstanciandoAsViews
-        Button btnAlterarImagemPerfil = findViewById(R.id.btnAlterarImagemPerfilPessoaJuridica);
-        imgPerfilPessoaJuridica = findViewById(R.id.imgPerfilPessoaJuridica);
+        Button btnAlterarImagemPerfil = findViewById(R.id.btnAbrirCameraPerfilPessoaFisica);
+        imgPerfilPessoaJuridica = findViewById(R.id.imgPerfilPessoaFisica);
         tvNomeFantasiaPerfilJuridico = findViewById(R.id.tvNomeFantasiaPerfilJuridico);
         tvRazaoSocialPerfilJuridico = findViewById(R.id.tvRazaoSocialPerfilJuridico);
         tvEmailPerfilJuridico = findViewById(R.id.tvEmailPerfilJuridico);
@@ -208,7 +208,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     }
 
     private void setDadosMenuLateral(){
-        PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
 
     private void permissaoGravarLerArquivos(){

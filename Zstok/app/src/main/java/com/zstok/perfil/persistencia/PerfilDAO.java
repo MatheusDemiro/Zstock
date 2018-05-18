@@ -1,23 +1,87 @@
 package com.zstok.perfil.persistencia;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
+import com.zstok.infraestrutura.utils.Helper;
+import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
+import java.io.File;
+import java.io.IOException;
+
 public class PerfilDAO {
-    public static void setNomeEmailView(final NavigationView navigationView, final FirebaseUser user){
+
+    private static StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+
+    //Inserindo imagem no banco
+    public static void insereFoto(Uri uriFoto){
+
+        if (uriFoto != null){
+
+            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() +".bmp");
+            ref.putFile(uriFoto).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                }
+            });
+        }
+    }
+    //Resgatando foto do Storage
+    public static void resgatarFoto(final NavigationView navigationView, final ImageView imgNavHeaderPessoa){
+        StorageReference ref = storageReference.child("images/perfil/" +
+                FirebaseController.getUidUser() + ".bmp");
+
+        try {
+            final File localFile = File.createTempFile("images", "bmp");
+            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Bitmap minhaFoto = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    setImagemPerfilUsuario(navigationView, minhaFoto);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                }
+            });
+        } catch (IOException e) {
+            Log.d("IOException downlaod", e.getMessage());
+        }
+    }
+    public static void setDadosNavHeader(final NavigationView navigationView, final FirebaseUser user){
 
         //Consultando banco de dados para resgatar o nome e email
         final DatabaseReference referencia = FirebaseController.getFirebase();
@@ -26,8 +90,8 @@ public class PerfilDAO {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Pessoa pessoa = dataSnapshot.child("pessoa").child(user.getUid()).getValue(Pessoa.class);
-                setUserName(navigationView , pessoa.getNome());
-                setUserEmail(navigationView, user.getEmail());
+                setNomeUsuario(navigationView , pessoa.getNome());
+                setEmailUsuario(navigationView, user.getEmail());
             }
 
             @Override
@@ -37,18 +101,25 @@ public class PerfilDAO {
         });
     }
     //Método que seta o email para o TextView id: txt_nav_UserEmail
-    private static void setUserEmail(NavigationView navView, String email){
+    private static void setEmailUsuario(NavigationView navView, String email){
         View headerView = navView.getHeaderView(0);
         TextView userEmail = headerView.findViewById(R.id.tvNavHeaderEmail);
         userEmail.setText(email);
     }
     //Método que seta o nome para o TextView id: txt_nav_UserName
-    private static void setUserName(NavigationView navView, String nome){
+    private static void setNomeUsuario(NavigationView navView, String nome){
         View headerView = navView.getHeaderView(0);
         TextView userName = headerView.findViewById(R.id.tvNavHeaderNome);
         userName.setText(nome);
     }
-
+    //Método que seta a foto do menu lateral
+    private static void setImagemPerfilUsuario(NavigationView navView, Bitmap image) {
+        if(image!=null){
+            View headerView = navView.getHeaderView(0);
+            ImageView imagemPerfilLateral = headerView.findViewById(R.id.imgNavHeaderPessoa);
+            imagemPerfilLateral.setImageBitmap(image);
+        }
+    }
     public static boolean insereNome(String novoNome){
         boolean verificador;
 

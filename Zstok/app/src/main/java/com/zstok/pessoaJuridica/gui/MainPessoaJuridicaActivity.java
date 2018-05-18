@@ -83,7 +83,7 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
         });
     }
     private void setDadosMenuLateral(){
-        PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
 
     private void abrirTelaPerfilPessoaJuridicaActivity() {

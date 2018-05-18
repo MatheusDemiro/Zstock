@@ -1,17 +1,24 @@
 package com.zstok.perfil.negocio;
 
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
 import com.zstok.perfil.persistencia.PerfilDAO;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
 public class PerfilServices {
-    public static void setNomeEmailView(NavigationView navigationView, FirebaseUser user){
-        PerfilDAO.setNomeEmailView(navigationView, user);
+    public static void setDadosNavHeader(NavigationView navigationView, FirebaseUser user){
+        PerfilDAO.setDadosNavHeader(navigationView, user);
+    }
+    public static void resgatarFoto(NavigationView navigationView, ImageView imgNavHeaderPessoa){
+        PerfilDAO.resgatarFoto(navigationView, imgNavHeaderPessoa);
+    }
+    public static void insereFoto(Uri uriFoto){
+        PerfilDAO.insereFoto(uriFoto);
     }
     public static boolean alterarNome(String novoNome){
         return PerfilDAO.insereNome(novoNome);

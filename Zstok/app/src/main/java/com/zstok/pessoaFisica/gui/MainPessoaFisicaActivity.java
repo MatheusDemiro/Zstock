@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.zstok.R;
@@ -23,6 +24,7 @@ import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
 import com.zstok.perfil.negocio.PerfilServices;
+import com.zstok.perfil.persistencia.PerfilDAO;
 
 
 public class MainPessoaFisicaActivity extends AppCompatActivity
@@ -30,6 +32,7 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
 
     private NavigationView navigationView;
     private AlertDialog alertaSair;
+    private ImageView imgNavHeaderPessoaFisica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +83,8 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         });
     }
     private void setDadosMenuLateral(){
-        PerfilServices.setNomeEmailView(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.resgatarFoto(navigationView,imgNavHeaderPessoaFisica);
+        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
     }
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
     private void sair () {
