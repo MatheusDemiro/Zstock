@@ -25,8 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="121dp"
-                android:layout_toRightOf="@id/imgPerfilPessoaFisica"
-                android:layout_toEndOf="@+id/imgPerfilPessoaFisica"
+                android:layout_toRightOf="@id/cvPerfilPessoaFisica"
+                android:layout_toEndOf="@+id/cvPerfilPessoaFisica"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/ic_camera" />
@@ -36,14 +36,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/btnAbrirCameraPerfilPessoaFisica"
-                android:layout_toLeftOf="@+id/imgPerfilPessoaFisica"
-                android:layout_toStartOf="@+id/imgPerfilPessoaFisica"
+                android:layout_toLeftOf="@+id/cvPerfilPessoaFisica"
+                android:layout_toStartOf="@+id/cvPerfilPessoaFisica"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/ic_galeria"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgPerfilPessoaFisica"
+                android:id="@+id/cvPerfilPessoaFisica"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_alignParentTop="true"

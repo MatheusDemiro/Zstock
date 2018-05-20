@@ -50,6 +50,12 @@ public class Helper {
 
         textView.addTextChangedListener(mtw);
     }
+    public static void mascaraCnpj(TextView textView){
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN/NNNN-NN");
+        MaskTextWatcher mtw = new MaskTextWatcher(textView, smf);
+
+        textView.addTextChangedListener(mtw);
+    }
     public static void mascaraDataNascimento(EditText editText){
         SimpleMaskFormatter smf = new SimpleMaskFormatter("NN/NN/NNNN");
         MaskTextWatcher mtw = new MaskTextWatcher(editText, smf);

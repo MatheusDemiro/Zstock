@@ -1,14 +1,11 @@
 package com.zstok.perfil.gui;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -29,19 +26,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
@@ -52,7 +42,6 @@ import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaFisica.gui.MainPessoaFisicaActivity;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -60,14 +49,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class PerfilPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private AlertDialog alertaSair;
-    private CircleImageView imgPerfilPessoaFisica;
-
     private static final int CAMERA_REQUEST_CODE = 0;
     private static final int GALERY_REQUEST_CODE = 1;
+
     private StorageReference storageReference;
     private Uri uriFoto;
+    private AlertDialog alertaSair;
 
+    private TextView tvNomeUsuarioNavHeader;
+    private TextView tvEmailUsuarioNavHeader;
+    private CircleImageView cvPerfilPessoaFisica;
+    private CircleImageView cvNavHeaderPessoa;
     private TextView tvNomePerfilFisico;
     private TextView tvEmailPerfilFisico;
     private TextView tvCpfPerfilFisico;
@@ -94,7 +86,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Instanciando as views
-        imgPerfilPessoaFisica = findViewById(R.id.imgPerfilPessoaFisica);
+        cvPerfilPessoaFisica = findViewById(R.id.cvPerfilPessoaFisica);
         tvNomePerfilFisico = findViewById(R.id.tvNomePerfilFisico);
         tvEmailPerfilFisico = findViewById(R.id.tvEmailPerfilFisico);
         tvCpfPerfilFisico = findViewById(R.id.tvCpfPerfilFisico);
@@ -109,10 +101,13 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         //Solicitando permissão ao usuário, caso o mesmo ainda não tenha permitido a solicitação
         permissaoGravarLerArquivos();
 
+        //Instanciando views do menu lateral
+        instanciandoView();
+
         //Carregar dados do menu lateral
         setDadosMenuLateral();
 
-        //Carregando foto do banco de dados no ImageView
+        //Carregando foto do banco de dados e setando para o ImageView
         carregandoFoto();
 
         //Recuperando dados do usuário do banco
@@ -122,7 +117,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         Helper.mascaraCpf(tvCpfPerfilFisico);
         Helper.mascaraTelefone(tvTelefonePerfilFisico);
         Helper.mascaraDataNascimento(tvDataNascimentoPerfilFisico);
-
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -218,6 +212,12 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             }
         });
     }
+    private void instanciandoView(){
+        View headerView = navigationView.getHeaderView(0);
+        tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
+        tvEmailUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderEmail);
+        cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
+    }
     private void setInformacoesPerfil(Pessoa pessoa, PessoaFisica pessoaFisica){
         tvNomePerfilFisico.setText(pessoa.getNome());
         tvEmailPerfilFisico.setText(FirebaseController.getFirebaseAuthentication().getCurrentUser().getEmail());
@@ -228,7 +228,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     //Carregando informações do menu lateral
     private void setDadosMenuLateral(){
-        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
+        PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader, tvEmailUsuarioNavHeader);
     }
     //Permissão para ler e gravar arquivos do celular
     private void permissaoGravarLerArquivos(){
@@ -271,20 +272,21 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                     Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
         }
     }
+    //Método que abre a galeria
     private void escolherFoto(){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent,"Selecione uma imagem"), GALERY_REQUEST_CODE);
     }
-    //Abrindo a câmera do celular
+    //Método que abre a câmera
     private void tirarFoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, CAMERA_REQUEST_CODE);
         }
     }
-    //Esse método trata a permissão do usuário solicitada no método "permissaoAcessarCamera()"
+    //Esse método trata as permissões do usuário
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults){
         switch (requestCode){
@@ -326,7 +328,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                     uriFoto = data.getData();
                     try{
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uriFoto);
-                        imgPerfilPessoaFisica.setImageBitmap(bitmap);
+                        cvPerfilPessoaFisica.setImageBitmap(bitmap);
+                        cvNavHeaderPessoa.setImageBitmap(bitmap);
                         inserirFoto(uriFoto);
                     }catch(IOException e ){
                         Log.d("IOException upload", e.getMessage());
@@ -340,7 +343,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                         if (extras != null) {
                             Bitmap bitmap = (Bitmap) extras.get("data");
                             uriFoto = getImageUri(getApplicationContext(), bitmap);
-                            imgPerfilPessoaFisica.setImageBitmap(bitmap);
+                            cvPerfilPessoaFisica.setImageBitmap(bitmap);
+                            cvNavHeaderPessoa.setImageBitmap(bitmap);
                             inserirFoto(uriFoto);
                         }
                     }
@@ -354,24 +358,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     //Resgatando foto do Storage
     private void carregandoFoto(){
-        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() + ".bmp");
-
-        try {
-            final File localFile = File.createTempFile("images", "bmp");
-            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap minhaFoto = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    imgPerfilPessoaFisica.setImageBitmap(minhaFoto);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                }
-            });
-        } catch (IOException e) {
-            Log.d("IOException downlaod", e.getMessage());
-        }
+        PerfilServices.resgatarFoto(cvPerfilPessoaFisica);
     }
     //Obtendo URI da imagem
     public Uri getImageUri(Context inContext, Bitmap inImage) {

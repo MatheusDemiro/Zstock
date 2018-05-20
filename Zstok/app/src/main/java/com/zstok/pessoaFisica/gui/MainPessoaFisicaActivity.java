@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.zstok.R;
@@ -26,13 +27,18 @@ import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
 import com.zstok.perfil.negocio.PerfilServices;
 import com.zstok.perfil.persistencia.PerfilDAO;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class MainPessoaFisicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private TextView tvNomeUsuarioNavHeader;
+    private TextView tvEmailUsuarioNavHeader;
+    private CircleImageView cvNavHeaderPessoa;
+
     private NavigationView navigationView;
     private AlertDialog alertaSair;
-    private ImageView imgNavHeaderPessoaFisica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,9 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Instanciando views do menu lateral
+        instanciandoView();
+
         //Carregando informações do menu lateral
         setDadosMenuLateral();
 
@@ -82,9 +91,15 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
             }
         });
     }
+    private void instanciandoView(){
+        View headerView = navigationView.getHeaderView(0);
+        tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
+        tvEmailUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderEmail);
+        cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
+    }
     private void setDadosMenuLateral(){
-        PerfilServices.resgatarFoto(navigationView,imgNavHeaderPessoaFisica);
-        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
+        PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
     private void sair () {

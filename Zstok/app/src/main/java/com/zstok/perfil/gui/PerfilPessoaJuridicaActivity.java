@@ -1,7 +1,6 @@
 package com.zstok.perfil.gui;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -25,23 +25,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
@@ -54,16 +48,24 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private static final int CAMERA_REQUEST_CODE = 1;
+    private static final int CAMERA_REQUEST_CODE = 0;
+    private static final int GALERY_REQUEST_CODE = 1;
+    private Uri uriFoto;
+
     private StorageReference storageReference;
-    private Uri uriphoto;
     private AlertDialog alertaSair;
 
-    private ImageView imgPerfilPessoaJuridica;
+    private TextView tvNomeUsuarioNavHeader;
+    private TextView tvEmailUsuarioNavHeader;
+    private CircleImageView cvNavHeaderPessoa;
+
+    private CircleImageView cvPerfilPessoaJuridica;
     private TextView tvNomeFantasiaPerfilJuridico;
     private TextView tvRazaoSocialPerfilJuridico;
     private TextView tvEmailPerfilJuridico;
@@ -89,8 +91,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //InstanciandoAsViews
-        Button btnAlterarImagemPerfil = findViewById(R.id.btnAbrirCameraPerfilPessoaFisica);
-        imgPerfilPessoaJuridica = findViewById(R.id.imgPerfilPessoaFisica);
+        cvPerfilPessoaJuridica = findViewById(R.id.imgPerfilPessoaJuridica);
         tvNomeFantasiaPerfilJuridico = findViewById(R.id.tvNomeFantasiaPerfilJuridico);
         tvRazaoSocialPerfilJuridico = findViewById(R.id.tvRazaoSocialPerfilJuridico);
         tvEmailPerfilJuridico = findViewById(R.id.tvEmailPerfilJuridico);
@@ -101,12 +102,34 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         //Referencia storage
         storageReference = FirebaseStorage.getInstance().getReference();
 
+        //Instanciando as views
+        instanciandoView();
+
+        //Carregandos informações do menu lateral
         setDadosMenuLateral();
+
+        //Recuperando dados do perfil
         recuperarDados();
+
+        //Solicitando permissão ao usuário
         permissaoGravarLerArquivos();
+
+        //Carregando foto do perfil
         carregandoFoto();
 
-        btnAlterarImagemPerfil.setOnClickListener(new View.OnClickListener() {
+        //Máscaras cnpj e telfone
+        Helper.mascaraCpf(tvCnpjPerfilJuridico);
+        Helper.mascaraTelefone(tvTelefonePerfilJuridico);
+
+        FloatingActionButton fabAbrirGaleriaPerfilPessoaJuridica = findViewById(R.id.btnAbrirGaleriaCameraPerfilPessoaJuridica);
+        fabAbrirGaleriaPerfilPessoaJuridica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                escolherFoto();
+            }
+        });
+        FloatingActionButton fabAbrirCameraPerfilPessoaJuridica = findViewById(R.id.btnAbrirCameraPerfilPessoaJuridica);
+        fabAbrirCameraPerfilPessoaJuridica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 permissaoAcessarCamera();
@@ -178,7 +201,14 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             }
         });
     }
-
+    //Método que inicializa as instâncias dos itens do menu lateral
+    private void instanciandoView(){
+        View headerView = navigationView.getHeaderView(0);
+        tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
+        tvEmailUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderEmail);
+        cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
+    }
+    //Recuperando os dados do perfil
     private void recuperarDados(){
         FirebaseController.getFirebase().addValueEventListener(new ValueEventListener() {
             @Override
@@ -197,7 +227,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             }
         });
     }
-
+    //Carregando as informções do perfil
     private void setInformacoesPerfil(Pessoa pessoa, PessoaJuridica pessoaJuridica){
         tvNomeFantasiaPerfilJuridico.setText(pessoa.getNome());
         tvTelefonePerfilJuridico.setText(pessoa.getTelefone());
@@ -208,7 +238,8 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     }
 
     private void setDadosMenuLateral(){
-        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
+        PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
 
     private void permissaoGravarLerArquivos(){
@@ -239,24 +270,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     }
 
     private void carregandoFoto(){
-        StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() + ".bmp");
-
-        try {
-            final File localFile = File.createTempFile("images", "bmp");
-            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap minhaFoto = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    imgPerfilPessoaJuridica.setImageBitmap(minhaFoto);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                }
-            });
-        } catch (IOException e) {
-            Log.d("IOException downlaod", e.getMessage());
-        }
+       PerfilServices.resgatarFoto(cvPerfilPessoaJuridica);
     }
 
     private void permissaoAcessarCamera() {
@@ -272,7 +286,14 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
                     Manifest.permission.CAMERA},CAMERA_REQUEST_CODE);
         }
     }
-
+    //Método que abre a galeria
+    private void escolherFoto(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Selecione uma imagem"), GALERY_REQUEST_CODE);
+    }
+    //Método que abre a câmera
     private void tirarFoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -280,71 +301,74 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         }
     }
 
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-            if (data !=  null) {
-                Bundle extras = data.getExtras();
-                if (extras != null) {
-                    Bitmap bitmap = (Bitmap) extras.get("data");
-                    imgPerfilPessoaJuridica.setImageBitmap(bitmap);
-                    uriphoto = getImageUri(getApplicationContext(), bitmap);
-                    uploadFoto();
+        switch (requestCode) {
+            case GALERY_REQUEST_CODE:{
+                if (requestCode == GALERY_REQUEST_CODE && resultCode == RESULT_OK) {
+                    uriFoto = data.getData();
+                    try{
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uriFoto);
+                        cvPerfilPessoaJuridica.setImageBitmap(bitmap);
+                        cvNavHeaderPessoa.setImageBitmap(bitmap);
+                        inserirFoto(uriFoto);
+                    }catch(IOException e ){
+                        Log.d("IOException upload", e.getMessage());
+                    }
+                }
+            }
+            case CAMERA_REQUEST_CODE: {
+                if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+                    if (data != null) {
+                        Bundle extras = data.getExtras();
+                        if (extras != null) {
+                            Bitmap bitmap = (Bitmap) extras.get("data");
+                            uriFoto = getImageUri(getApplicationContext(), bitmap);
+                            cvPerfilPessoaJuridica.setImageBitmap(bitmap);
+                            cvNavHeaderPessoa.setImageBitmap(bitmap);
+                            inserirFoto(uriFoto);
+                        }
+                    }
                 }
             }
         }
     }
-
-    private void uploadFoto(){
-
-        final double porcentagemUploadFoto = 100.0;
-
-        if (uriphoto != null){
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Salvando foto...");
-            progressDialog.show();
-
-            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() +".bmp");
-            ref.putFile(uriphoto).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    progressDialog.dismiss();
-                    Helper.criarToast(PerfilPessoaJuridicaActivity.this, "Sucesso!");
+    //Inserindo imagem no banco
+    private void inserirFoto(Uri uriFoto){
+        PerfilServices.insereFoto(uriFoto);
+    }
+    //Esse método trata as permissões do usuário
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults){
+        switch (requestCode){
+            case CAMERA_REQUEST_CODE:{
+                if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    tirarFoto();
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    progressDialog.dismiss();
-                    Helper.criarToast(PerfilPessoaJuridicaActivity.this, "Falhou!"+e.getMessage());
+            }
+            case GALERY_REQUEST_CODE:{
+                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    escolherFoto();
                 }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    double progress = (porcentagemUploadFoto * taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
-                    progressDialog.setMessage("Salvando " + (int)progress+"%");
-                }
-            });
+            }
         }
     }
-
+    //Método que resgata o caminha da foto
     public Uri getImageUri(Context inContext, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
-
     private void abrirTelaAlterarNomeActivity(){
         Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaActivity.class);
         startActivity(intent);
     }
-
     private void abrirTelaAlterarEmailActivity(){
         Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaActivity.class);
         startActivity(intent);
     }
-
     private void abrirTelaAlterarTelefoneActivity() {
         Intent intent = new Intent(getApplicationContext(), AlterarTelefonePessoaActivity.class);
         startActivity(intent);

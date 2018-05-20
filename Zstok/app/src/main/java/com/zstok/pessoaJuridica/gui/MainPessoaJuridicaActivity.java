@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.zstok.R;
@@ -24,11 +25,17 @@ import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.perfil.gui.PerfilPessoaJuridicaActivity;
 import com.zstok.perfil.negocio.PerfilServices;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainPessoaJuridicaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavigationView navigationView;
     private AlertDialog alertaSair;
+
+    private TextView tvNomeUsuarioNavHeader;
+    private TextView tvEmailUsuarioNavHeader;
+    private CircleImageView cvNavHeaderPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,9 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Instanciando views do menu lateral
+        instanciandoView();
 
         //Carregando informações do menu lateral
         setDadosMenuLateral();
@@ -82,8 +92,15 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
             }
         });
     }
+    private void instanciandoView(){
+        View headerView = navigationView.getHeaderView(0);
+        tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
+        tvEmailUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderEmail);
+        cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
+    }
     private void setDadosMenuLateral(){
-        PerfilServices.setDadosNavHeader(navigationView, FirebaseController.getFirebaseAuthentication().getCurrentUser());
+        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
+        PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
 
     private void abrirTelaPerfilPessoaJuridicaActivity() {

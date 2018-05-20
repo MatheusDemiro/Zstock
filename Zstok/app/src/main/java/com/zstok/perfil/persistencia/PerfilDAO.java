@@ -1,7 +1,5 @@
 package com.zstok.perfil.persistencia;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -24,19 +22,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
-import com.zstok.infraestrutura.utils.Helper;
-import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
 import java.io.File;
 import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PerfilDAO {
 
@@ -60,7 +57,7 @@ public class PerfilDAO {
         }
     }
     //Resgatando foto do Storage
-    public static void resgatarFoto(final NavigationView navigationView, final ImageView imgNavHeaderPessoa){
+    public static void resgatarFoto(final CircleImageView circleImageView){
         StorageReference ref = storageReference.child("images/perfil/" +
                 FirebaseController.getUidUser() + ".bmp");
 
@@ -70,7 +67,7 @@ public class PerfilDAO {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     Bitmap minhaFoto = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    setImagemPerfilUsuario(navigationView, minhaFoto);
+                    circleImageView.setImageBitmap(minhaFoto);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -78,10 +75,10 @@ public class PerfilDAO {
                 }
             });
         } catch (IOException e) {
-            Log.d("IOException downlaod", e.getMessage());
+            Log.d("ERRO", e.getMessage());
         }
     }
-    public static void setDadosNavHeader(final NavigationView navigationView, final FirebaseUser user){
+    public static void setDadosNavHeader(final FirebaseUser user, final TextView tvNomeUsuarioNavHeader, final TextView tvEmailUsuarioNavHeader){
 
         //Consultando banco de dados para resgatar o nome e email
         final DatabaseReference referencia = FirebaseController.getFirebase();
@@ -89,9 +86,9 @@ public class PerfilDAO {
         referencia.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Pessoa pessoa = dataSnapshot.child("pessoa").child(user.getUid()).getValue(Pessoa.class);
-                setNomeUsuario(navigationView , pessoa.getNome());
-                setEmailUsuario(navigationView, user.getEmail());
+                String nomeUsuario = dataSnapshot.child("pessoa").child(user.getUid()).child("nome").getValue(String.class);
+                tvNomeUsuarioNavHeader.setText(nomeUsuario);
+                tvEmailUsuarioNavHeader.setText(user.getEmail());
             }
 
             @Override
@@ -99,26 +96,6 @@ public class PerfilDAO {
 
             }
         });
-    }
-    //Método que seta o email para o TextView id: txt_nav_UserEmail
-    private static void setEmailUsuario(NavigationView navView, String email){
-        View headerView = navView.getHeaderView(0);
-        TextView userEmail = headerView.findViewById(R.id.tvNavHeaderEmail);
-        userEmail.setText(email);
-    }
-    //Método que seta o nome para o TextView id: txt_nav_UserName
-    private static void setNomeUsuario(NavigationView navView, String nome){
-        View headerView = navView.getHeaderView(0);
-        TextView userName = headerView.findViewById(R.id.tvNavHeaderNome);
-        userName.setText(nome);
-    }
-    //Método que seta a foto do menu lateral
-    private static void setImagemPerfilUsuario(NavigationView navView, Bitmap image) {
-        if(image!=null){
-            View headerView = navView.getHeaderView(0);
-            ImageView imagemPerfilLateral = headerView.findViewById(R.id.imgNavHeaderPessoa);
-            imagemPerfilLateral.setImageBitmap(image);
-        }
     }
     public static boolean insereNome(String novoNome){
         boolean verificador;
@@ -217,3 +194,23 @@ public class PerfilDAO {
     }
 
 }
+/*//Método que seta o email para o TextView id: txt_nav_UserEmail
+    private static void setEmailUsuario(NavigationView navView, String email){
+        View headerView = navView.getHeaderView(0);
+        TextView userEmail = headerView.findViewById(R.id.tvNavHeaderEmail);
+        userEmail.setText(email);
+    }
+    //Método que seta o nome para o TextView id: txt_nav_UserName
+    private static void setNomeUsuario(NavigationView navView, String nome){
+        View headerView = navView.getHeaderView(0);
+        TextView userName = headerView.findViewById(R.id.tvNavHeaderNome);
+        userName.setText(nome);
+    }
+    //Método que seta a foto do menu lateral
+    private static void setImagemNavHeader(NavigationView navView, Bitmap image) {
+        if(image!=null){
+            View headerView = navView.getHeaderView(0);
+            ImageView imagemPerfilLateral = headerView.findViewById(R.id.cvNavHeaderPessoa);
+            imagemPerfilLateral.setImageBitmap(image);
+        }
+    }*/

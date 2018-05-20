@@ -3,6 +3,7 @@ package com.zstok.perfil.negocio;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.zstok.perfil.persistencia.PerfilDAO;
@@ -10,12 +11,14 @@ import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class PerfilServices {
-    public static void setDadosNavHeader(NavigationView navigationView, FirebaseUser user){
-        PerfilDAO.setDadosNavHeader(navigationView, user);
+    public static void setDadosNavHeader(FirebaseUser user, TextView tvNomeUsuarioNavHeader, TextView tvEmailUsuarioNavHeader){
+        PerfilDAO.setDadosNavHeader(user, tvNomeUsuarioNavHeader, tvEmailUsuarioNavHeader);
     }
-    public static void resgatarFoto(NavigationView navigationView, ImageView imgNavHeaderPessoa){
-        PerfilDAO.resgatarFoto(navigationView, imgNavHeaderPessoa);
+    public static void resgatarFoto(CircleImageView circleImageView){
+        PerfilDAO.resgatarFoto(circleImageView);
     }
     public static void insereFoto(Uri uriFoto){
         PerfilDAO.insereFoto(uriFoto);
