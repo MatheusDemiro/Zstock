@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/jabuticaba"
     tools:context=".perfil.gui.AlterarEnderecoPessoaActivity">
 
     <LinearLayout
@@ -25,6 +26,9 @@
             android:padding="10dp"
             android:drawableLeft="@drawable/ic_endereco"
             android:drawablePadding="10dp"
+            android:textColorHint="@color/cimento"
+            android:textColor="@color/cloudGrey"
+            android:backgroundTint="@color/cimento"
             android:inputType="text"/>
 
         <EditText
@@ -33,6 +37,9 @@
             android:layout_height="50dp"
             android:hint="@string/zs_hint_complemento_alterar_perfil"
             android:padding="10dp"
+            android:textColorHint="@color/cimento"
+            android:textColor="@color/cloudGrey"
+            android:backgroundTint="@color/cimento"
             android:drawableLeft="@drawable/ic_endereco"
             android:drawablePadding="10dp"
             android:inputType="text"/>
@@ -42,6 +49,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/zs_hint_cidade_alterar_perfil"
+            android:textColorHint="@color/cimento"
+            android:textColor="@color/cloudGrey"
+            android:backgroundTint="@color/cimento"
             android:padding="10dp"
             android:drawableLeft="@drawable/ic_endereco"
             android:drawablePadding="10dp"/>
@@ -50,14 +60,14 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp" >
-
+            android:layout_marginBottom="10dp">
             <Spinner
                 android:id="@+id/spnAlteraEstadoPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:entries="@array/spinner_estado"
                 android:paddingLeft="30dp"
+                android:backgroundTint="@color/cloudGrey"
                 android:paddingRight="30dp" />
         </RelativeLayout>
 
@@ -68,6 +78,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/goiaba"
             android:text="@string/zs_btn_alterar_endereco"/>
 
     </LinearLayout>

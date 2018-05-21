@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/jabuticaba"
     tools:context=".perfil.gui.AlterarRazaoSocialPessoaJuridicaActivity">
 
     <EditText
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:id="@+id/edtAlterarRazaoSocial"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -21,6 +26,7 @@
         android:id="@+id/btnAlterarRazaoSocial"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:backgroundTint="@color/goiaba"
         android:text="Alterar Razão Social"/>
 
 </LinearLayout>

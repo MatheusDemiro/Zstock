@@ -31,6 +31,14 @@
         android:textColor="@color/cloudGrey"
         android:textColorHint="@color/cimento" />
 
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/goiaba"
+        android:text="@string/zs_btn_entrar" />
+
     <TextView
         android:id="@+id/tvEsqueciSenha"
         android:layout_width="match_parent"
@@ -41,20 +49,12 @@
         android:textAllCaps="false"
         android:textColor="@color/goiaba" />
 
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@color/goiaba"
-        android:text="@string/zs_btn_entrar" />
-
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/frame_layout_login"
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="5dp"
         tools:context=".infraestrutura.gui.LoginActivity">
 
         <TextView

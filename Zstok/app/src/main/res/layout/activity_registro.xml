@@ -6,9 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/jabuticaba"
+    android:padding="16dp"
     tools:context=".pessoa.gui.RegistroActivity">
 
     <EditText
+
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:id="@+id/edtRegistroNome"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -24,6 +30,9 @@
 
     <EditText
         android:id="@+id/edtRegistroCpfCnpj"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="5dp"
@@ -40,6 +49,9 @@
         android:id="@+id/edtRegistroEmail"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
@@ -57,6 +69,9 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:drawableLeft="@drawable/ic_password"
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="10dp"
@@ -74,6 +89,9 @@
         android:drawableLeft="@drawable/ic_password"
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="10dp"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:ems="10"
         android:hint="@string/zs_hint_confirmar_senha"
         android:inputType="textPassword"/>
@@ -85,6 +103,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/border_white"
+        android:backgroundTint="@color/goiaba"
         android:text="@string/zs_btn_cadastrar" />
 
 </LinearLayout>

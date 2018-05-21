@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/jabuticaba"
+    android:padding="16dp"
     tools:context=".perfil.gui.AlterarDataNascimentoPessoaFisicaActivity">
 
     <EditText
@@ -16,6 +18,9 @@
         android:drawableStart="@drawable/ic_calendario"
         android:drawablePadding="@dimen/drawable_padding"
         android:hint="@string/zs_hint_nova_data_nascimento"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:paddingLeft="10dp"
         android:paddingStart="10dp"
         android:inputType="number"/>
@@ -25,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/goiaba"
         android:text="@string/zs_btn_alterar_data_nascimento"/>
 
 </LinearLayout>

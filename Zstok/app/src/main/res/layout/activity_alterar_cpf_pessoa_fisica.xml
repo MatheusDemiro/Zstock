@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/jabuticaba"
     tools:context=".perfil.gui.AlterarCpfPessoaFisicaActivity">
 
     <EditText
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:id="@+id/edtCpfAtualAlterarPessoaFisica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +25,9 @@
         android:hint="@string/zs_hint_cpf_atual_alterar_perfil"/>
 
     <EditText
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
         android:id="@+id/edtCpfNovoAlterarPessoaFisica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +42,7 @@
         android:id="@+id/btnAlterarCpfPessoaFisica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/goiaba"
         android:text="@string/zs_btn_alterar_cpf"/>
 
 </LinearLayout>
