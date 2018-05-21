@@ -1,6 +1,7 @@
 package com.zstok.infraestrutura.gui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ import com.zstok.infraestrutura.utils.VerificaConexao;
 import com.zstok.pessoa.gui.RegistroActivity;
 import com.zstok.pessoaJuridica.gui.MainPessoaJuridicaActivity;
 
+import static com.zstok.R.color.cloudGrey;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText edtEmail;
@@ -37,14 +40,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        //getActionBar().hide();
         //Instanciando views
         edtEmail = findViewById(R.id.edtEmail);
         edtSenha = findViewById(R.id.edtSenha);
         TextView tvRegistreSe = findViewById(R.id.tvRegistreSe);
         TextView tvEsqueciSenha = findViewById(R.id.tvEsqueciSenha);
         Button btnEntrar = findViewById(R.id.btnEntrar);
-
+        edtEmail.setTextColor(getResources().getColor(R.color.cloudGrey));
+        edtSenha.setTextColor(getResources().getColor(R.color.cloudGrey));
         //Inicializando a instância da classe VerificaConexao
         verificaConexao = new VerificaConexao(this);
 
