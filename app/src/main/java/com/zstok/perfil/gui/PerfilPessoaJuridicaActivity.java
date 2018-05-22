@@ -50,7 +50,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
 
 
     private static final int CAMERA_REQUEST_CODE = 1;
-    private static final int GALERY_REQUEST_CODE = 0;
+    private static final int GALERY_REQUEST_CODE = 71;
     private Uri uriFoto;
 
     private StorageReference storageReference;
@@ -263,6 +263,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             }
         }
     }
+    //Permissão para acessar a câmera
     private void permissaoAcessarCamera() {
         //Verifica permissão de camera
         int permissionCheck = ContextCompat.checkSelfPermission(PerfilPessoaJuridicaActivity.this, Manifest.permission.CAMERA);
@@ -332,18 +333,21 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     private void inserirFoto(Uri uriFoto){
         PerfilServices.insereFoto(uriFoto);
     }
+
     //Esse método trata as permissões do usuário
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults){
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
         switch (requestCode){
             case CAMERA_REQUEST_CODE:{
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     tirarFoto();
+                    break;
                 }
             }
             case GALERY_REQUEST_CODE:{
                 if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     escolherFoto();
+                    break;
                 }
             }
         }

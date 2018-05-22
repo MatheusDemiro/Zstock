@@ -284,11 +284,13 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
             case CAMERA_REQUEST_CODE:{
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     tirarFoto();
+                    break;
                 }
             }
             case GALERY_REQUEST_CODE:{
                 if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     escolherFoto();
+                    break;
                 }
             }
         }

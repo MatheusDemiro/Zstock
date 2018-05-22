@@ -34,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PerfilPessoaJuridicaActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PerfilPessoaJuridicaActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/perfil/gui/PerfilPessoaJuridicaActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+            <state relative-caret-position="3140">
+              <caret line="349" column="26" lean-forward="false" selection-start-line="349" selection-start-column="26" selection-end-line="349" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -54,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerfilPessoaFisicaActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PerfilPessoaFisicaActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/perfil/gui/PerfilPessoaFisicaActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2701">
-              <caret line="281" column="102" lean-forward="false" selection-start-line="281" selection-start-column="102" selection-end-line="281" selection-end-column="102" />
+            <state relative-caret-position="323">
+              <caret line="292" column="26" lean-forward="false" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
               <folding>
                 <element signature="e#2948#2979#0" expanded="true" />
                 <element signature="e#2981#3013#0" expanded="true" />
@@ -80,14 +80,14 @@
                 <element signature="e#7111#7112#0" expanded="true" />
                 <element signature="e#7172#7346#0" expanded="true" />
                 <element signature="e#7345#7346#0" expanded="true" />
-                <element signature="e#15528#15565#0" expanded="true" />
-                <element signature="e#15623#15673#0" expanded="true" />
-                <element signature="e#15750#15784#0" expanded="true" />
-                <element signature="e#15786#16011#0" expanded="true" />
-                <element signature="e#16010#16011#0" expanded="true" />
-                <element signature="e#16089#16123#0" expanded="true" />
-                <element signature="e#16125#16292#0" expanded="true" />
-                <element signature="e#16291#16292#0" expanded="true" />
+                <element signature="e#15582#15619#0" expanded="true" />
+                <element signature="e#15677#15727#0" expanded="true" />
+                <element signature="e#15804#15838#0" expanded="true" />
+                <element signature="e#15840#16065#0" expanded="true" />
+                <element signature="e#16064#16065#0" expanded="true" />
+                <element signature="e#16143#16177#0" expanded="true" />
+                <element signature="e#16179#16346#0" expanded="true" />
+                <element signature="e#16345#16346#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2346,6 +2346,13 @@
             <path>
               <item name="Zstok" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="zstok" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dominio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Zstok" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -2636,17 +2643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_pessoa_fisica.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_pessoa_fisica.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3142,18 +3138,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/perfil/gui/PerfilPessoaJuridicaActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/usuario/dominio/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/perfil/gui/PerfilPessoaFisicaActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2701">
-          <caret line="281" column="102" lean-forward="false" selection-start-line="281" selection-start-column="102" selection-end-line="281" selection-end-column="102" />
+        <state relative-caret-position="323">
+          <caret line="292" column="26" lean-forward="false" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
           <folding>
             <element signature="e#2948#2979#0" expanded="true" />
             <element signature="e#2981#3013#0" expanded="true" />
@@ -3175,15 +3171,23 @@
             <element signature="e#7111#7112#0" expanded="true" />
             <element signature="e#7172#7346#0" expanded="true" />
             <element signature="e#7345#7346#0" expanded="true" />
-            <element signature="e#15528#15565#0" expanded="true" />
-            <element signature="e#15623#15673#0" expanded="true" />
-            <element signature="e#15750#15784#0" expanded="true" />
-            <element signature="e#15786#16011#0" expanded="true" />
-            <element signature="e#16010#16011#0" expanded="true" />
-            <element signature="e#16089#16123#0" expanded="true" />
-            <element signature="e#16125#16292#0" expanded="true" />
-            <element signature="e#16291#16292#0" expanded="true" />
+            <element signature="e#15582#15619#0" expanded="true" />
+            <element signature="e#15677#15727#0" expanded="true" />
+            <element signature="e#15804#15838#0" expanded="true" />
+            <element signature="e#15840#16065#0" expanded="true" />
+            <element signature="e#16064#16065#0" expanded="true" />
+            <element signature="e#16143#16177#0" expanded="true" />
+            <element signature="e#16179#16346#0" expanded="true" />
+            <element signature="e#16345#16346#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zstok/perfil/gui/PerfilPessoaJuridicaActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3140">
+          <caret line="349" column="26" lean-forward="false" selection-start-line="349" selection-start-column="26" selection-end-line="349" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
