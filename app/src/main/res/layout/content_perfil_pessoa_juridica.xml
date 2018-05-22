@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jabuticaba">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.zstok.perfil.gui.PerfilPessoaJuridicaActivity"
+        tools:showIn="@layout/app_bar_perfil_pessoa_juridica">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabAbrirCameraPerfilPessoaJuridica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="121dp"
+                android:layout_toEndOf="@+id/imgPerfilPessoaJuridica"
+                android:layout_toRightOf="@id/imgPerfilPessoaJuridica"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_camera"
+                app:backgroundTint="@color/goiaba" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabAbrirGaleriaCameraPerfilPessoaJuridica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/fabAbrirCameraPerfilPessoaJuridica"
+                android:layout_toLeftOf="@+id/imgPerfilPessoaJuridica"
+                android:layout_toStartOf="@+id/imgPerfilPessoaJuridica"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_galeria"
+                app:backgroundTint="@color/goiaba" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerfilPessoaJuridica"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/ic_sem_foto"
+                app:civ_border_color="@color/cloudGrey"
+                app:civ_border_width="2dp"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="361dp">
+
+            <TextView
+                android:id="@+id/tvNomeFantasiaPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_nome"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_nome_fantasia"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/vwNomeFantasia"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/tvNomeFantasiaPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/cloudGrey" />
+
+            <TextView
+                android:id="@+id/tvRazaoSocialPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/vwNomeFantasia"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_nome"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_razao_social"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/vwRazaoSocial"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/tvRazaoSocialPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/cloudGrey" />
+
+            <TextView
+                android:id="@+id/tvEmailPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/vwRazaoSocial"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_email"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_email"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/vwEmailPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/tvEmailPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/cloudGrey" />
+
+            <TextView
+                android:id="@+id/tvCnpjPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/vwEmailPerfilJuridico"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_cpf_cnpj"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_cpf_cnpj"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_cnpj_usuario"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/vwCnpj"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/tvCnpjPerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/cloudGrey" />
+
+            <TextView
+                android:id="@+id/tvTelefonePerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/vwCnpj"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_telefone"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_telefone"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_telefone_usuario"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/vwTelefonePerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/tvTelefonePerfilJuridico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/cloudGrey" />
+
+            <TextView
+                android:id="@+id/tvEnderecoPerfilJuridico"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@id/vwTelefonePerfilJuridico"
+                android:backgroundTint="@color/cimento"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_endereco"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_endereco_usuario"
+                android:paddingLeft="@dimen/padding_left"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

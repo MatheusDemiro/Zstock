@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/jabuticaba"
+    tools:context=".produto.gui.CadastrarProdutoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabAbrirCameraCadastrarProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="121dp"
+            android:layout_toEndOf="@+id/cvCadstrarProduto"
+            android:layout_toRightOf="@id/cvCadstrarProduto"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_camera"
+            app:backgroundTint="@color/goiaba" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabAbrirGaleriaCadastrarProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/fabAbrirCameraCadastrarProduto"
+            android:layout_toLeftOf="@+id/cvCadstrarProduto"
+            android:layout_toStartOf="@+id/cvCadstrarProduto"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_galeria"
+            app:backgroundTint="@color/goiaba" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cvCadstrarProduto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:src="@drawable/ic_sem_foto"
+            app:civ_border_color="@color/cloudGrey"
+            app:civ_border_width="2dp"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtNomeProduto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_nome_produto"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp"
+            android:textColor="@color/cloudGrey"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_produtos"
+            android:drawableStart="@drawable/ic_produtos"
+            android:drawableTint="@color/white"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingStart="@dimen/padding_left"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edtPrecoProduto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_preco_produto"
+            android:textSize="18sp"
+            android:textColorHint="@color/cimento"
+            android:textColor="@color/cloudGrey"
+            android:layout_margin="5dp"
+            android:layout_below="@id/edtNomeProduto"
+            android:drawableLeft="@drawable/ic_negociacao"
+            android:drawableStart="@drawable/ic_negociacao"
+            android:drawableTint="@color/white"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingStart="@dimen/padding_left"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/edtQuantidadeEstoqueProduto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/edtPrecoProduto"
+            android:textSize="18sp"
+            android:textColorHint="@color/cimento"
+            android:hint="@string/zs_hint_quantidade_estoque_produto"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_quantidade"
+            android:drawableStart="@drawable/ic_quantidade"
+            android:drawableTint="@color/white"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingStart="@dimen/padding_left"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/edtDescricaoProduto"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/edtQuantidadeEstoqueProduto"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_editar"
+            android:drawableTint="@color/white"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingStart="@dimen/padding_left"
+            android:hint="@string/zs_hint_descricao_produto"
+            android:paddingBottom="70dp"
+            android:maxLength="1000"
+            android:textColorHint="@color/cimento"/>
+
+        <Button
+            android:id="@+id/btnCadastrarProduto"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/edtDescricaoProduto"
+            android:layout_centerInParent="true"
+            android:background="@drawable/border_white"
+            android:backgroundTint="@color/goiaba"
+            android:text="@string/zs_btn_cadastrar" />
+
+    </RelativeLayout>
+</LinearLayout>

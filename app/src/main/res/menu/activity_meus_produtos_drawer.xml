@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_meu_perfil_produtos"
+            android:icon="@drawable/ic_perfil"
+            android:title="@string/zs_menu_lateral_perfil" />
+        <item
+            android:id="@+id/nav_negociacao_produtos"
+            android:icon="@drawable/ic_negociacao"
+            android:title="@string/zs_menu_lateral_negociacao" />
+        <item
+            android:id="@+id/nav_meus_produtos"
+            android:icon="@drawable/ic_produtos"
+            android:title="@string/zs_menu_lateral_produtos" />
+        <item
+            android:id="@+id/nav_sair"
+            android:icon="@drawable/ic_sair"
+            android:title="@string/zs_menu_lateral_sair" />
+    </group>
+</menu>

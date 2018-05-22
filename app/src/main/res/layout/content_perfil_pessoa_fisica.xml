@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jabuticaba"
+    android:padding="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.zstok.perfil.PerfilPessoaFisicaActivity"
+        tools:showIn="@layout/app_bar_perfil_pessoa_fisica">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabAbrirCameraPerfilPessoaFisica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="121dp"
+                android:layout_toEndOf="@+id/cvPerfilPessoaFisica"
+                android:layout_toRightOf="@id/cvPerfilPessoaFisica"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_camera"
+                app:backgroundTint="@color/goiaba" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabAbrirGaleriaPerfilPessoaFisica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/fabAbrirCameraPerfilPessoaFisica"
+                android:layout_toLeftOf="@+id/cvPerfilPessoaFisica"
+                android:layout_toStartOf="@+id/cvPerfilPessoaFisica"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_galeria"
+                app:backgroundTint="@color/goiaba" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cvPerfilPessoaFisica"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/ic_sem_foto"
+                app:civ_border_color="@color/cloudGrey"
+                app:civ_border_width="2dp"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvNomePerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_nome"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"
+                android:textSize="18sp"
+                android:textColor="@color/cloudGrey"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_nome"
+                android:drawableStart="@drawable/ic_nome"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"/>
+
+            <View
+                android:id="@+id/vwNomePerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/cloudGrey"
+                android:layout_below="@id/tvNomePerfilFisico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvEmailPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_email"
+                android:textSize="18sp"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"
+                android:textColor="@color/cloudGrey"
+                android:layout_margin="5dp"
+                android:layout_below="@id/vwNomePerfilFisico"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableStart="@drawable/ic_email"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left" />
+
+            <View
+                android:id="@+id/vwEmailPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/cloudGrey"
+                android:layout_below="@id/tvEmailPerfilFisico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvCpfPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwEmailPerfilFisico"
+                android:hint="@string/zs_hint_cpf_usuario"
+                android:textSize="18sp"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"
+                android:textColor="@color/cloudGrey"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_cpf_cnpj"
+                android:drawableStart="@drawable/ic_cpf_cnpj"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left" />
+
+            <View
+                android:id="@+id/vwCpfPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/cloudGrey"
+                android:layout_below="@id/tvCpfPerfilFisico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvTelefonePerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwCpfPerfilFisico"
+                android:hint="@string/zs_hint_telefone_usuario"
+                android:textSize="18sp"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"
+                android:layout_margin="5dp"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableLeft="@drawable/ic_telefone"
+                android:drawableStart="@drawable/ic_telefone"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"/>
+
+            <View
+                android:id="@+id/vwTelefonePerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/cloudGrey"
+                android:layout_below="@id/tvTelefonePerfilFisico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvEnderecoPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/vwTelefonePerfilFisico"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableLeft="@drawable/ic_endereco"
+                android:drawableStart="@drawable/ic_endereco"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableRight="@drawable/ic_setinha"
+                android:paddingLeft="@dimen/padding_left"
+                android:hint="@string/zs_hint_endereco_usuario"
+                android:textSize="18sp"
+                android:textColor="@color/cloudGrey"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"/>
+
+            <View
+                android:id="@+id/vwEnderecoPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/cloudGrey"
+                android:layout_below="@id/tvEnderecoPerfilFisico"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:id="@+id/tvDataNascimentoPerfilFisico"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/tvEnderecoPerfilFisico"
+                android:layout_margin="5dp"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableEnd="@drawable/ic_setinha"
+                android:drawableRight="@drawable/ic_setinha"
+                android:drawableStart="@drawable/ic_data_nascimento"
+                android:drawableLeft="@drawable/ic_data_nascimento"
+                android:gravity="center_vertical"
+                android:hint="@string/zs_hint_data_nascimento_usuario"
+                android:textColorHint="@color/cimento"
+                android:backgroundTint="@color/cimento"
+                android:paddingLeft="@dimen/padding_left"
+                android:paddingStart="@dimen/padding_left"
+                android:textSize="18sp"
+                android:textColor="@color/cloudGrey"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
