@@ -1,77 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/jabuticaba"
-    android:paddingLeft="16dp"
-    android:padding="16dp"
     tools:context=".infraestrutura.gui.LoginActivity">
 
-    <EditText
-        android:id="@+id/edtEmail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:hint="@string/zs_hint_email"
-        android:inputType="textWebEmailAddress"
-        android:textColor="@color/cloudGrey"
-        android:backgroundTint="@color/cimento"
-        android:textColorHint="@color/cimento"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/jabuticaba"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingRight="16dp"
+        android:padding="16dp"
+        tools:context=".infraestrutura.gui.LoginActivity" >
 
-    <EditText
-        android:id="@+id/edtSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/zs_hint_senha"
-        android:inputType="textWebPassword"
-        android:backgroundTint="@color/cimento"
-        android:textColor="@color/cloudGrey"
-        android:textColorHint="@color/cimento" />
-
-    <Button
-        android:id="@+id/btnEntrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@color/goiaba"
-        android:text="@string/zs_btn_entrar" />
-
-    <TextView
-        android:id="@+id/tvEsqueciSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/zs_txt_esqueceu_senha"
-        android:textAllCaps="false"
-        android:textColor="@color/goiaba" />
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/frame_layout_login"
-        android:layout_width="188dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        tools:context=".infraestrutura.gui.LoginActivity">
-
-        <TextView
-            android:id="@+id/tvNaoRegistrado"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_marginTop="150dp"
+            android:hint="@string/zs_hint_email"
+            android:inputType="textWebEmailAddress"
             android:textColor="@color/cloudGrey"
-            android:text="@string/zs_txt_registro"
-            tools:ignore="RtlHardcoded" />
+            android:backgroundTint="@color/cimento"
+            android:textColorHint="@color/cimento"/>
+
+        <EditText
+            android:id="@+id/edtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/zs_hint_senha"
+            android:inputType="textWebPassword"
+            android:backgroundTint="@color/cimento"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento" />
+
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/goiaba"
+            android:text="@string/zs_btn_entrar" />
 
         <TextView
-            android:id="@+id/tvRegistreSe"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvEsqueciSenha"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textColor="@color/goiaba"
-            android:text="@string/zs_txt_registre_se" />
-    </FrameLayout>
-</LinearLayout>
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/zs_txt_esqueceu_senha"
+            android:textAllCaps="false"
+            android:textColor="@color/goiaba" />
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/frame_layout_login"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            tools:context=".infraestrutura.gui.LoginActivity">
+
+            <TextView
+                android:id="@+id/tvNaoRegistrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textColor="@color/cloudGrey"
+                android:text="@string/zs_txt_registro"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tvRegistreSe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/goiaba"
+                android:text="@string/zs_txt_registre_se" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loginProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="225dp"
+        android:visibility="gone"/>
+</RelativeLayout>

@@ -3,6 +3,7 @@ package com.zstok.perfil.negocio;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -26,8 +27,8 @@ public class PerfilServices {
     public static boolean alterarNome(String novoNome){
         return PerfilDAO.insereNome(novoNome);
     }
-    public static boolean alterarEmail(String novoEmail, String senha){
-        return PerfilDAO.insereEmail(novoEmail, senha);
+    public static boolean alterarEmail(String novoEmail){
+        return PerfilDAO.insereEmail(novoEmail);
     }
     public static boolean alterarTelefone(String novoTelefone){
         return PerfilDAO.insereTelefone(novoTelefone);

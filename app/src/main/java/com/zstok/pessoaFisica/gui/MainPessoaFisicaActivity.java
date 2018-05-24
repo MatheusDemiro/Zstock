@@ -16,16 +16,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
+import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.perfil.gui.PerfilPessoaFisicaActivity;
 import com.zstok.perfil.negocio.PerfilServices;
-import com.zstok.perfil.persistencia.PerfilDAO;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -71,6 +72,9 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
         //Carregando informações do menu lateral
         setDadosMenuLateral();
 
+        //Carregando foto
+        carregarFoto();
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -91,14 +95,26 @@ public class MainPessoaFisicaActivity extends AppCompatActivity
             }
         });
     }
+    //Carregando foto do usuário
+    private void carregarFoto(){
+        FirebaseUser user = FirebaseController.getFirebaseAuthentication().getCurrentUser();
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                Glide.with(this).load(user.getPhotoUrl()).into(cvNavHeaderPessoa);
+            }else {
+                Helper.criarToast(getApplicationContext(), "ERROR");
+            }
+        }
+    }
+    //Método que instancia as views
     private void instanciandoView(){
         View headerView = navigationView.getHeaderView(0);
         tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
         tvEmailUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderEmail);
         cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
     }
+    //Método que carrega nome e email do usuário e seta nas views do menu lateral
     private void setDadosMenuLateral(){
-        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
         PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma

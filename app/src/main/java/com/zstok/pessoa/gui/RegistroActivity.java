@@ -1,12 +1,15 @@
 package com.zstok.pessoa.gui;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
@@ -60,7 +66,7 @@ public class RegistroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (verificaConexao.isConected()){
                     if (validarCampos()){
-                        cadastrarUsuario();
+                        verificarCpfCnpj();
                     }
                 }
             }
@@ -76,8 +82,10 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (verificarAutenticacao(task)){
-                    if (inserirPessoa()) {
+                    if (inserirPessoa()){
                         inserirCpfCnpj();
+                    }else {
+                        Helper.criarToast(getApplicationContext(), getString(R.string.zs_excecao_database));
                     }
                 }
             }
@@ -125,6 +133,53 @@ public class RegistroActivity extends AppCompatActivity {
         pessoaFisica.setCpf(edtRegCpfCnpj.getText().toString());
 
         return pessoaFisica;
+    }
+    private void verificarCpfCnpj(){
+        FirebaseController.getFirebase().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (ValidarCpfCnpj.isCpfCnpj(edtRegCpfCnpj.getText().toString())){
+                    if (verificarCpf(dataSnapshot)){
+                        cadastrarUsuario();
+                    }
+                }else {
+                    if (verificarCnpj(dataSnapshot)){
+                        cadastrarUsuario();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    //Verificando se o cpf está cadastrado no sistema
+    private boolean verificarCpf(DataSnapshot dataSnapshot){
+        boolean verificador = true;
+        Iterable<DataSnapshot> cpfs = dataSnapshot.child("pessoaFisica").getChildren();
+        for (DataSnapshot dataSnapshotChild: cpfs){
+            String cpf = dataSnapshotChild.child("cpf").getValue(String.class);
+            if (cpf.equals(edtRegCpfCnpj.getText().toString())){
+                edtRegCpfCnpj.setError(getString(R.string.zs_excecao_cpf_cadastrado_sistema));
+                verificador = false;
+            }
+        }
+        return verificador;
+    }
+    //Verificando se o cnpj está cadstrado no sistema
+    private boolean verificarCnpj(DataSnapshot dataSnapshot){
+        boolean verificador = true;
+        Iterable<DataSnapshot> cnpjs = dataSnapshot.child("pessoaJuridica").getChildren();
+        for (DataSnapshot dataSnapshotChild: cnpjs) {
+            String cnpj = dataSnapshotChild.child("cnpj").getValue(String.class);
+            if (cnpj.equals(edtRegCpfCnpj.getText().toString())) {
+                edtRegCpfCnpj.setError(getString(R.string.zs_excecao_cnpj_cadastrado_sistema));
+                verificador = false;
+            }
+        }
+        return verificador;
     }
     //Verificando autenticação
     private boolean verificarAutenticacao(@NonNull Task<AuthResult> task) {

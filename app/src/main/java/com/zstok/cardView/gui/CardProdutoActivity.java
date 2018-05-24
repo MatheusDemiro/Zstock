@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.zstok.R;
-import com.zstok.cardView.adapter.RecyclerAdapter;
+import com.zstok.produto.adapter.ProdutoListHolder;
 
 public class CardProdutoActivity extends AppCompatActivity {
 
@@ -24,7 +24,6 @@ public class CardProdutoActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
 }

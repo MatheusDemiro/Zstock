@@ -1,5 +1,6 @@
 package com.zstok.infraestrutura.gui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private VerificaConexao verificaConexao;
 
+    private View mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         TextView tvRegistreSe = findViewById(R.id.tvRegistreSe);
         TextView tvEsqueciSenha = findViewById(R.id.tvEsqueciSenha);
         Button btnEntrar = findViewById(R.id.btnEntrar);
+
+        mProgressBar = findViewById(R.id.loginProgressBar);
 
         //Setando cores
         edtEmail.setTextColor(getResources().getColor(R.color.cloudGrey));
@@ -95,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     //Verificando se o usuário está autenticado
     private void verificarAutenticacao(String email, String senha){
+        mProgressBar.setVisibility(View.VISIBLE);
         FirebaseController.getFirebaseAuthentication().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -103,15 +109,18 @@ public class LoginActivity extends AppCompatActivity {
                     if (user != null) {
                         verificarTipoConta(user);
                     } else {
+                        mProgressBar.setVisibility(View.INVISIBLE);
                         Helper.criarToast(getApplicationContext(), getString(R.string.zs_excecao_usuario_nao_encontrado));
                     }
                 } else {
+                    mProgressBar.setVisibility(View.INVISIBLE);
                     Helper.criarToast(getApplicationContext(), getString(R.string.zs_excecao_usuario_senha));
                 }
             }
         });
     }
     private void verificarTipoConta(FirebaseUser user){
+
         FirebaseController.getFirebase().child("pessoaFisica").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

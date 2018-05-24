@@ -1,20 +1,18 @@
 package com.zstok.produto.dominio;
 
-import android.graphics.Bitmap;
-
 public class Produto {
     private String idProduto;
     private int quantidadeEstoque;
-    private String nome;
+    private String nomeProduto;
     private String descricao;
-    private Bitmap imagemProduto;
+    private String urlImagemProduto;
     private double preco;
 
-    public String getNome() {
-        return nome;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
     public String getDescricao() {
         return descricao;
@@ -40,10 +38,10 @@ public class Produto {
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
-    public Bitmap getImagemProduto() {
-        return imagemProduto;
+    public String getUrlImagemProduto() {
+        return urlImagemProduto;
     }
-    public void setImagemProduto(Bitmap imagemProduto) {
-        this.imagemProduto = imagemProduto;
+    public void setUrlImagemProduto(String urlImagemProduto) {
+        this.urlImagemProduto = urlImagemProduto;
     }
 }

@@ -26,7 +26,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -101,7 +103,7 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         setDadosMenuLateral();
 
         //Carregando foto do banco de dados e setando para o ImageView
-        carregandoFoto();
+        carregarFoto();
 
         //Recuperando dados do usuário do banco
         recuperarDados();
@@ -221,7 +223,6 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
     }
     //Carregando informações do menu lateral
     private void setDadosMenuLateral(){
-        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
         PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader, tvEmailUsuarioNavHeader);
     }
     //Permissão para ler e gravar arquivos do celular
@@ -323,8 +324,8 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
                     uriFoto = data.getData();
                     try{
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uriFoto);
-                        cvPerfilPessoaFisica.setImageBitmap(bitmap);
                         cvNavHeaderPessoa.setImageBitmap(bitmap);
+                        cvPerfilPessoaFisica.setImageBitmap(bitmap);
                         inserirFoto(uriFoto);
                     }catch(IOException e ){
                         Log.d("IOException upload", e.getMessage());
@@ -352,8 +353,16 @@ public class PerfilPessoaFisicaActivity extends AppCompatActivity
         PerfilServices.insereFoto(uriFoto);
     }
     //Resgatando foto do Storage
-    private void carregandoFoto(){
-        PerfilServices.resgatarFoto(cvPerfilPessoaFisica);
+    private void carregarFoto(){
+        FirebaseUser user = FirebaseController.getFirebaseAuthentication().getCurrentUser();
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                Glide.with(this).load(user.getPhotoUrl()).into(cvNavHeaderPessoa);
+                Glide.with(this).load(user.getPhotoUrl()).into(cvPerfilPessoaFisica);
+            }else {
+                Helper.criarToast(getApplicationContext(), "ERROR");
+            }
+        }
     }
     //Obtendo URI da imagem
     public Uri getImageUri(Context inContext, Bitmap inImage) {

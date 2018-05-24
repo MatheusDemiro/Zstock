@@ -1,5 +1,6 @@
 package com.zstok.perfil.persistencia;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -8,13 +9,16 @@ import android.support.design.widget.NavigationView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
@@ -26,6 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.zstok.R;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
+import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaFisica.dominio.PessoaFisica;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
@@ -38,20 +43,27 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class PerfilDAO {
 
     private static StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+    private static String uriImagemPerfil;
 
     //Inserindo imagem no banco
-    public static void insereFoto(Uri uriFoto){
-
-        if (uriFoto != null){
-
-            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() +".bmp");
-            ref.putFile(uriFoto).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+    public static void insereFoto(Uri uriFoto) {
+        if (uriFoto != null) {
+            StorageReference ref = storageReference.child("images/perfil/" + FirebaseController.getUidUser() + ".bmp");
+            ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
-                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    uriImagemPerfil = taskSnapshot.getDownloadUrl().toString();
+                    FirebaseUser user = FirebaseController.getFirebaseAuthentication().getCurrentUser();
+                    if (user != null && uriImagemPerfil != null) {
+                        UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                                .setPhotoUri(Uri.parse(uriImagemPerfil))
+                                .build();
+                        user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                            }
+                        });
+                    }
                 }
             });
         }
@@ -108,7 +120,7 @@ public class PerfilDAO {
         }
         return verificador;
     }
-    public static boolean insereEmail(final String novoEmail, String senha) {
+    public static boolean insereEmail(final String novoEmail) {
         boolean verificador = true;
 
         try {

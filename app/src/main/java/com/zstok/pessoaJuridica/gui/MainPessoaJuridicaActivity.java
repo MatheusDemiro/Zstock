@@ -18,13 +18,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
+import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.perfil.gui.PerfilPessoaJuridicaActivity;
 import com.zstok.perfil.negocio.PerfilServices;
-import com.zstok.produto.gui.MeuProdutosActivity;
+import com.zstok.produto.gui.MeusProdutosActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -66,6 +69,9 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
         //Instanciando views do menu lateral
         instanciandoView();
 
+        //Carregando foto menu lateral
+        carregarFoto();
+
         //Carregando informações do menu lateral
         setDadosMenuLateral();
 
@@ -93,6 +99,17 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
             }
         });
     }
+    //Carregando foto do usuário
+    private void carregarFoto(){
+        FirebaseUser user = FirebaseController.getFirebaseAuthentication().getCurrentUser();
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                Glide.with(this).load(user.getPhotoUrl()).into(cvNavHeaderPessoa);
+            }else {
+                Helper.criarToast(getApplicationContext(), "ERROR");
+            }
+        }
+    }
     private void instanciandoView(){
         View headerView = navigationView.getHeaderView(0);
         tvNomeUsuarioNavHeader = headerView.findViewById(R.id.tvNavHeaderNome);
@@ -100,7 +117,6 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
         cvNavHeaderPessoa = headerView.findViewById(R.id.cvNavHeaderPessoa);
     }
     private void setDadosMenuLateral(){
-        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
         PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
     //Método que exibe a caixa de diálogo para o aluno confirmar ou não a sua saída da turma
@@ -174,7 +190,7 @@ public class MainPessoaJuridicaActivity extends AppCompatActivity
     }
     //Intent para a tela dos produtos cadastrados
     private void abrirTelaMeusProdutosActivity(){
-        Intent intent = new Intent(getApplicationContext(), MeuProdutosActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MeusProdutosActivity.class);
         startActivity(intent);
     }
     //Intent para a tela de perfil da pessoa jurídica

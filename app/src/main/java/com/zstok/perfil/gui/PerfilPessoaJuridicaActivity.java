@@ -26,12 +26,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
@@ -39,6 +39,7 @@ import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.perfil.negocio.PerfilServices;
 import com.zstok.pessoa.dominio.Pessoa;
 import com.zstok.pessoaJuridica.dominio.PessoaJuridica;
+import com.zstok.pessoaJuridica.gui.MainPessoaJuridicaActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -53,7 +54,6 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     private static final int GALERY_REQUEST_CODE = 71;
     private Uri uriFoto;
 
-    private StorageReference storageReference;
     private AlertDialog alertaSair;
 
     private TextView tvNomeUsuarioNavHeader;
@@ -94,9 +94,6 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         tvTelefonePerfilJuridico = findViewById(R.id.tvTelefonePerfilJuridico);
         tvEnderecoPerfilJuridico = findViewById(R.id.tvEnderecoPerfilJuridico);
 
-        //Referencia storage
-        storageReference = FirebaseStorage.getInstance().getReference();
-
         //Instanciando as views
         instanciandoView();
 
@@ -110,7 +107,7 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         permissaoGravarLerArquivos();
 
         //Carregando foto do perfil
-        carregandoFoto();
+        carregarFoto();
 
         //Máscaras cnpj e telfone
         Helper.mascaraCpf(tvCnpjPerfilJuridico);
@@ -179,10 +176,11 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_meu_perfil_juridico:
+                        drawer.closeDrawers();
                         return true;
                     case R.id.nav_negociacao_juridico:
                         //Função abrir tela negociacao
-                        drawer.closeDrawers();
+                        abrirTelaMainPessoaJuridicaActivity();
                         return true;
                     case R.id.nav_produtos:
                         //Função abrir tela produtos
@@ -195,6 +193,18 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
                 }
             }
         });
+    }
+    //Carregando foto de perfil
+    private void carregarFoto(){
+        FirebaseUser user = FirebaseController.getFirebaseAuthentication().getCurrentUser();
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                Glide.with(this).load(user.getPhotoUrl()).into(cvPerfilPessoaJuridica);
+                Glide.with(this).load(user.getPhotoUrl()).into(cvNavHeaderPessoa);
+            }else {
+                Helper.criarToast(getApplicationContext(), "ERROR");
+            }
+        }
     }
     //Método que inicializa as instâncias dos itens do menu lateral
     private void instanciandoView(){
@@ -233,7 +243,6 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
     }
 
     private void setDadosMenuLateral(){
-        PerfilServices.resgatarFoto(cvNavHeaderPessoa);
         PerfilServices.setDadosNavHeader(FirebaseController.getFirebaseAuthentication().getCurrentUser(),tvNomeUsuarioNavHeader,tvEmailUsuarioNavHeader);
     }
 
@@ -325,15 +334,10 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
             }
         }
     }
-    //Carregando foto de perfil
-    private void carregandoFoto(){
-        PerfilServices.resgatarFoto(cvPerfilPessoaJuridica);
-    }
     //Inserindo imagem no banco
     private void inserirFoto(Uri uriFoto){
         PerfilServices.insereFoto(uriFoto);
     }
-
     //Esse método trata as permissões do usuário
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
@@ -359,39 +363,6 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
-    private void abrirTelaAlterarNomeActivity(){
-        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaActivity.class);
-        startActivity(intent);
-    }
-    private void abrirTelaAlterarEmailActivity(){
-        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaActivity.class);
-        startActivity(intent);
-    }
-    private void abrirTelaAlterarTelefoneActivity() {
-        Intent intent = new Intent(getApplicationContext(), AlterarTelefonePessoaActivity.class);
-        startActivity(intent);
-    }
-
-    private void abrirTelaAlterarEnderecoActivity() {
-        Intent intent = new Intent(getApplicationContext(), AlterarEnderecoPessoaActivity.class);
-        startActivity(intent);
-    }
-    private void abrirTelaAlterarCnpjActivity() {
-        Intent intent = new Intent(getApplicationContext(),AlterarCnpjPessoaJuridicaActivity.class);
-        startActivity(intent);
-    }
-
-    private void abrirTelaAlterarRazaoSocialActivity() {
-        Intent intent = new Intent(getApplicationContext(),AlterarRazaoSocialPessoaJuridicaActivity.class);
-        startActivity(intent);
-    }
-    //Intent para tela de login
-    private void abrirTelaLoginActivity () {
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     private void sair () {
         //Cria o gerador do AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -459,5 +430,42 @@ public class PerfilPessoaJuridicaActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void abrirTelaAlterarNomeActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarNomePessoaActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaAlterarEmailActivity(){
+        Intent intent = new Intent(getApplicationContext(), AlterarEmailPessoaActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaAlterarTelefoneActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarTelefonePessoaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarEnderecoActivity() {
+        Intent intent = new Intent(getApplicationContext(), AlterarEnderecoPessoaActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaAlterarCnpjActivity() {
+        Intent intent = new Intent(getApplicationContext(),AlterarCnpjPessoaJuridicaActivity.class);
+        startActivity(intent);
+    }
+
+    private void abrirTelaAlterarRazaoSocialActivity() {
+        Intent intent = new Intent(getApplicationContext(),AlterarRazaoSocialPessoaJuridicaActivity.class);
+        startActivity(intent);
+    }
+    //Intent para tela de login
+    private void abrirTelaLoginActivity () {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    //Intent para a tela main
+    private void abrirTelaMainPessoaJuridicaActivity(){
+        Intent intent = new Intent(getApplicationContext(), MainPessoaJuridicaActivity.class);
+        startActivity(intent);
     }
 }

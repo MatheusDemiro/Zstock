@@ -6,7 +6,7 @@
     <string name="zs_hint_confirmar_senha">Confirmar senha</string>
     <string name="zs_hint_cf_cnpj">CPF/CNPJ</string>
     <string name="zs_hint_nome">Nome</string>
-    <string name="zs_hint_nome_produto">Digite o nome do produto</string>
+    <string name="zs_hint_nome_produto">Digite o nomeProduto do produto</string>
     <string name="zs_hint_preco_produto">Digite o preço do produto</string>
     <string name="zs_hint_quantidade_estoque_produto">Quantidade de produtos no estoque</string>
     <string name="zs_hint_descricao_produto">Descreva o produto</string>
@@ -21,7 +21,7 @@
     <string name="zs_hint_endereco_usuario">Endereço</string>
     <string name="zs_hint_razao_social">Razão Social</string>
     <string name="zs_hint_nome_fantasia">Nome fantasia</string>
-    <string name="zs_hint_novo_nome">Digite novo nome</string>
+    <string name="zs_hint_novo_nome">Digite novo nomeProduto</string>
     <string name="zs_hint_novo_telefone">Digite novo telefone</string>
     <string name="zs_hint_novo_email">Digite novo email</string>
     <string name="zs_hint_digite_senha">Digite sua senha</string>
@@ -43,7 +43,7 @@
     <string name="zs_btn_entrar">Entrar</string>
     <string name="zs_btn_cadastrar">Cadastrar</string>
     <string name="zs_btn_enviar">Enviar</string>
-    <string name="zs_btn_alterar_nome">Alterar nome</string>
+    <string name="zs_btn_alterar_nome">Alterar nomeProduto</string>
     <string name="zs_btn_alterar_email">Alterar email</string>
     <string name="zs_btn_alterar_telefone">Alterar telefone</string>
     <string name="zs_btn_alterar_endereco">Alterar endereço</string>
@@ -64,6 +64,7 @@
     <string name="zs_excecao_cpf">Digite um CPF válido!</string>
     <string name="zs_excecao_cpf_cadastrado_sistema">CPF já cadastrado no sistema</string>
     <string name="zs_excecao_cpf_nao_cadastrado">Cpf não cadastrado no sistema!</string>
+    <string name="zs_excecao_cnpj_cadastrado_sistema">CNPJ já cadastrado no sistema</string>
     <string name="zs_excecao_cnpj">Digite um CNPJ válido!</string>
     <string name="zs_excecao_senha_forte">Digite uma senha com no mínimo 6 caracteres</string>
     <string name="zs_excecao_email">Email digitado é inválido</string>
@@ -71,7 +72,7 @@
     <string name="zs_excecao_senhas_iguais">Digite senhas iguais</string>
     <string name="zs_excecao_conexao_falha">Verifique sua conexão com a internet</string>
     <string name="zs_excecao_usuario_nao_encontrado">Usuário não encontrado</string>
-    <string name="zs_excecao_usuario_senha">Usuario ou Senha inválido</string>
+    <string name="zs_excecao_usuario_senha">Usuario ou Senha inválido(s)!</string>
     <string name="zs_excecao_database">"Erro ao realizar operação. Verifique sua conexão com a internet ou contate o suporte."</string>
     <string name="zs_excecao_senha">Senha inválida!</string>
     <string name="zs_excecao_espaco_branco">Não é permitido deixar espaços em branco</string>

@@ -19,7 +19,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.zstok.R;
+import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
+import com.zstok.perfil.negocio.PerfilServices;
 import com.zstok.produto.dominio.Produto;
 import com.zstok.produto.negocio.ProdutoServices;
 
@@ -69,7 +71,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (verificaConexao.isConected()){
                     if (validarCampos()){
-                        inserirProduto(criarProduto());
+                        inserirProduto(uriFoto, criarProduto());
                     }
                 }
             }
@@ -221,10 +223,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     private Produto criarProduto(){
         Produto produto = new Produto();
 
-        if (bitmapCadstrarProduto != null) {
-            produto.setImagemProduto(bitmapCadstrarProduto);
-        }
-        produto.setNome(edtNomeProduto.getText().toString());
+        produto.setNomeProduto(edtNomeProduto.getText().toString());
         produto.setPreco(Double.valueOf(edtPrecoProduto.getText().toString()));
         produto.setQuantidadeEstoque(Integer.valueOf(edtQuantidadeEstoqueProduto.getText().toString()));
         produto.setDescricao(edtDescricaoProduto.getText().toString());
@@ -232,8 +231,12 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         return produto;
     }
     //Inserindo imagem no banco
-    private void inserirProduto(Produto produto){
-        ProdutoServices.insereProduto(produto);
+    private void inserirProduto(Uri uriFoto, Produto produto){
+        if (ProdutoServices.insereProduto(uriFoto, produto)){
+            abrirTelaMeusProdutosActivity();
+        } else {
+            Helper.criarToast(getApplicationContext(), getString(R.string.zs_excecao_database));
+        }
     }
     //Obtendo URI da imagem
     private Uri getImageUri(Context inContext, Bitmap inImage) {
@@ -242,7 +245,9 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }
+    //Intent para a tela meus produtos
     private void abrirTelaMeusProdutosActivity(){
-
+        Intent intent = new Intent(getApplicationContext(), MeusProdutosActivity.class);
+        startActivity(intent);
     }
 }

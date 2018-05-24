@@ -7,17 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.zstok.R;
 import com.zstok.infraestrutura.gui.LoginActivity;
 import com.zstok.infraestrutura.persistencia.FirebaseController;
 import com.zstok.infraestrutura.utils.Helper;
 import com.zstok.infraestrutura.utils.VerificaConexao;
 import com.zstok.perfil.negocio.PerfilServices;
+import com.zstok.pessoa.gui.RegistroActivity;
 
 public class AlterarEmailPessoaActivity extends AppCompatActivity {
 
@@ -74,15 +81,15 @@ public class AlterarEmailPessoaActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    alterarEmail(edtAlterarEmailPessoa.getText().toString(), edtSenhaPessoa.getText().toString());
+                    alterarEmail(edtAlterarEmailPessoa.getText().toString());
                 } else {
                     edtSenhaPessoa.setError(getString(R.string.zs_excecao_senha));
                 }
             }
         });
     }
-    private void alterarEmail(String novoEmail, String senha){
-            if (PerfilServices.alterarEmail(novoEmail, senha)) {
+    private void alterarEmail(String novoEmail){
+            if (PerfilServices.alterarEmail(novoEmail)) {
                 Helper.criarToast(getApplicationContext(), getString(R.string.zs_email_alterado_sucesso));
                 encerrarSessaoUsuario();
             } else {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinner_estado" color="@color/cloudGrey">
+    <string-array name="spinner_estado">
         <item>Selecione o seu estado</item>
         <item>AC - Acre</item>
         <item>Al - Alagoas</item>

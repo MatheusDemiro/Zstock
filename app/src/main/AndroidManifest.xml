@@ -54,7 +54,7 @@
         <activity android:name=".perfil.gui.AlterarCnpjPessoaJuridicaActivity" />
         <activity android:name=".produto.gui.CadastrarProdutoActivity" />
         <activity
-            android:name=".produto.gui.MeuProdutosActivity"
+            android:name=".produto.gui.MeusProdutosActivity"
             android:label="@string/title_activity_meus_produtos"
             android:theme="@style/AppTheme">
         </activity>
