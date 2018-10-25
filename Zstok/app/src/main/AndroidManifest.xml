@@ -3,23 +3,83 @@
     package="com.zstok">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pessoa.gui.RegistroActivity">
+        <activity android:name=".infraestrutura.gui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".infraestrutura.gui.LoginActivity" />
-        <activity android:name=".usuario.gui.RegistroActivity" />
+        <activity android:name=".pessoa.gui.RegistroActivity" />
+        <activity android:name=".infraestrutura.gui.ResgatarSenhaActivity" />
+        <activity
+            android:name=".perfil.gui.PerfilPessoaFisicaActivity"
+            android:label="@string/title_activity_pessoa_fisica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".pessoaFisica.gui.MainPessoaFisicaActivity"
+            android:label="@string/title_activity_main_pessoa_fisica"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".perfil.gui.PerfilPessoaJuridicaActivity"
+            android:label="@string/title_activity_perfil_pessoa_juridica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".negociacao.gui.MainNegociacaoPessoaJuridicaActivity"
+            android:label="@string/title_activity_main_pessoa_juridica"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".perfil.gui.AlterarEmailPessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarNomePessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarDataNascimentoPessoaFisicaActivity" />
+        <activity android:name=".perfil.gui.AlterarCpfPessoaFisicaActivity" />
+        <activity android:name=".perfil.gui.AlterarTelefonePessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarEnderecoPessoaActivity" />
+        <activity android:name=".perfil.gui.AlterarRazaoSocialPessoaJuridicaActivity" />
+        <activity android:name=".perfil.gui.AlterarCnpjPessoaJuridicaActivity" />
+        <activity android:name=".produto.gui.CadastrarProdutoActivity" />
+        <activity
+            android:name=".produto.gui.MeusProdutosActivity"
+            android:label="@string/title_activity_meus_produtos"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".produto.gui.EditarProdutoActivity" />
+        <activity android:name=".produto.gui.VisualizarProdutoActivity" />
+        <activity android:name=".pessoaJuridica.gui.VisualizarEmpresaActivity" />
+        <activity
+            android:name=".carrinhoCompra.gui.CarrinhoCompraActivity"
+            android:label="@string/title_activity_carrinho_compra"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".historico.gui.MainHistoricoCompraPessoaFisicaActivity"
+            android:label="@string/zs_menu_lateral_historico_pessoa_fisica"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".historico.gui.MainHistoricoVendaPessoaJuridicaActivity"
+            android:label="@string/zs_menu_lateral_historico_pessoa_juridica"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".historico.gui.VisualizarHistoricoActivity" />
+        <activity
+            android:name=".negociacao.gui.MainNegociacaoPessoaFisicaActivity"
+            android:label="@string/title_activity_negociacao"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".negociacao.gui.CarrinhoNegociacaoActivity" />
+        <activity android:name=".negociacao.gui.ChatNegociacaoActivity" />
+        <activity android:name=".negociacao.gui.VizualizarChatActivity"></activity>
     </application>
 
 </manifest>

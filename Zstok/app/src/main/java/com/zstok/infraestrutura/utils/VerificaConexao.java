@@ -9,8 +9,8 @@ public class VerificaConexao {
 
     private Context context;
 
-    public VerificaConexao(Context context1) {
-        this.context = context1;
+    public VerificaConexao(Context contextActivity) {
+        this.context = contextActivity;
     }
 
     public boolean isConected(){

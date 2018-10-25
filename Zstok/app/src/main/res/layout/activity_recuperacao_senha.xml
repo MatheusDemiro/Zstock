@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/jabuticaba"
+    tools:context="com.zstok.infraestrutura.gui.ResgatarSenhaActivity">
+
+    <EditText
+        android:id="@+id/edtEmailResgatarSenha"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/zs_hint_email"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/btnResgatarSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/goiaba"
+        android:hint="@string/zs_btn_enviar"
+        android:textColor="@color/preto"/>
+
+</LinearLayout>

@@ -25,6 +25,10 @@
         {
           "client_id": "913788619841-lj71geqstubblreh0u22p7dg8r3gi5c4.apps.googleusercontent.com",
           "client_type": 3
+        },
+        {
+          "client_id": "913788619841-lj71geqstubblreh0u22p7dg8r3gi5c4.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
@@ -65,6 +69,10 @@
             "package_name": "zstok.zstok",
             "certificate_hash": "076502c04adbe42351774504861ad2d8ec369dae"
           }
+        },
+        {
+          "client_id": "913788619841-lj71geqstubblreh0u22p7dg8r3gi5c4.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "913788619841-lj71geqstubblreh0u22p7dg8r3gi5c4.apps.googleusercontent.com",

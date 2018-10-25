@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:src="@drawable/ic_produtos"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="@color/goiaba"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tvNomeProdutoDialogoCompra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NOME PRODUTO"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/jabuticaba"/>
+
+    <EditText
+        android:id="@+id/edtQuantidadeDesejadaDialogoCompra"
+        android:inputType="number"
+        android:maxLength="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/zs_hint_quantidade_dialogo_compra" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top">
+
+        <TextView
+            android:id="@+id/tvTextoTotalDialogoCompra"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zs_texto_total_dialogo_compra"
+            android:layout_gravity="start"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalDialogoCompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@id/tvTextoTotalDialogoCompra"
+            android:layout_toEndOf="@id/tvTextoTotalDialogoCompra"
+            android:layout_gravity="end"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnVoltarDialogoCompra"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTotalDialogoCompra"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/borda_cimento"
+            android:text="@string/zs_btn_voltar_dialogo_compra" />
+
+        <Button
+            android:id="@+id/btnAdicionarItemDialogoCarrinho"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/tvTotalDialogoCompra"
+            android:background="@drawable/borda_cimento"
+            android:text="@string/zs_btn_confirmar_dialogo_compra" />
+
+    </RelativeLayout>
+
+</LinearLayout>

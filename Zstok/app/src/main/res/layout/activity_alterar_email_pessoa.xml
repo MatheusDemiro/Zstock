@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/jabuticaba"
+    tools:context="com.zstok.perfil.gui.AlterarEmailPessoaActivity">
+
+    <EditText
+        android:id="@+id/edtAlterarEmailPessoa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/zs_hint_novo_email"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:inputType="textWebEmailAddress"/>
+
+    <EditText
+        android:id="@+id/edtSenhaPessoa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/zs_hint_digite_senha"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_cadeado"
+        android:drawableStart="@drawable/ic_cadeado"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:inputType="textWebPassword" />
+
+    <Button
+        android:id="@+id/btnAlterarEmailPessoa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/goiaba"
+        android:text="@string/zs_btn_alterar_email"/>
+
+</LinearLayout>

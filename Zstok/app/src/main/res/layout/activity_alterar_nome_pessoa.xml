@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/jabuticaba"
+    android:padding="16dp"
+    tools:context="com.zstok.perfil.gui.AlterarNomePessoaActivity">
+
+    <EditText
+        android:id="@+id/edtAlterarNomePessoa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/zs_hint_nome"
+        android:drawableLeft="@drawable/ic_nome"
+        android:drawableStart="@drawable/ic_nome"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:textColor="@color/cloudGrey"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:paddingLeft="@dimen/drawable_padding"
+        android:paddingRight="@dimen/drawable_padding"/>
+
+    <Button
+        android:id="@+id/btnAlterarNomePessoa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/goiaba"
+        android:text="@string/zs_btn_alterar_nome"/>
+
+</LinearLayout>

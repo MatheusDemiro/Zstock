@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/jabuticaba"
+    tools:context=".perfil.gui.AlterarCnpjPessoaJuridicaActivity">
+
+    <EditText
+        android:id="@+id/edtCnpjAtualAlterarPessoaJuridica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:drawableLeft="@drawable/ic_cpf_cnpj"
+        android:drawableStart="@drawable/ic_cpf_cnpj"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:padding="10dp"
+        android:inputType="number"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:hint="@string/zs_hint_cnpj_antigo_alterar_perfil"/>
+
+    <EditText
+        android:id="@+id/edtCnpjNovoAlterarPessoaJuridica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:drawableLeft="@drawable/ic_cpf_cnpj"
+        android:drawableStart="@drawable/ic_cpf_cnpj"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:inputType="number"
+        android:hint="@string/zs_hint_novo_cnpj_alterar_perfil"/>
+
+    <Button
+        android:id="@+id/btnAlterarCnpjPessoaJuridica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/goiaba"
+        android:text="@string/zs_btn_alterar_cnpj"/>
+
+</LinearLayout>

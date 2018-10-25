@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewHistorico"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    card_view:cardBackgroundColor="@color/cloudGrey"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="4dp">
+
+    <RelativeLayout
+        android:id="@+id/historicoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvNomeCpfCardViewHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvTextoTotalCardViewHistorico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvDataCompraCardViewHistorico"
+            android:text="TOTAL:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalCardViewProduto"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvNomeCpfCardViewHistorico"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvTextoTotalCardViewHistorico"
+            android:layout_toRightOf="@+id/tvTextoTotalCardViewHistorico" />
+
+        <TextView
+            android:id="@+id/tvTextoDataCompraCardViewHistorico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignBaseline="@+id/tvDataCompraCardViewHistorico"
+            android:layout_alignBottom="@+id/tvDataCompraCardViewHistorico"
+            android:text="DATA:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDataCompraCardViewHistorico"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvTotalCardViewProduto"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/tvTextoDataCompraCardViewHistorico"
+            android:layout_toRightOf="@+id/tvTextoDataCompraCardViewHistorico" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

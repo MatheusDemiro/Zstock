@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jabuticaba">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".pessoaJuridica.gui.VisualizarEmpresaActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cvEmpresa"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/ic_sem_foto"
+                app:civ_border_color="@color/cloudGrey"
+                app:civ_border_width="2dp"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="361dp">
+
+        <TextView
+            android:id="@+id/tvNomeFantasiaEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/cimento"
+            android:drawableLeft="@drawable/ic_nome"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_nome"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_nome_fantasia"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_left"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/vwNomeFantasia"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/tvNomeFantasiaEmpresa"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/cloudGrey" />
+
+        <TextView
+            android:id="@+id/tvRazaoSocialEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/vwNomeFantasia"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/cimento"
+            android:drawableLeft="@drawable/ic_nome"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_nome"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_razao_social"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_left"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/vwRazaoSocialEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/tvRazaoSocialEmpresa"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/cloudGrey" />
+
+        <TextView
+            android:id="@+id/tvCnpjEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/vwRazaoSocialEmpresa"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/cimento"
+            android:drawableLeft="@drawable/ic_cpf_cnpj"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_cpf_cnpj"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_cnpj_usuario"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_left"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/vwCnpjEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/tvCnpjEmpresa"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/cloudGrey" />
+
+        <TextView
+            android:id="@+id/tvTelefoneEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/vwCnpjEmpresa"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/cimento"
+            android:drawableLeft="@drawable/ic_telefone"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:drawableStart="@drawable/ic_telefone"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_telefone_usuario"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_left"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/vwTelefoneEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/tvTelefoneEmpresa"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@color/cloudGrey" />
+
+        <TextView
+            android:id="@+id/tvEnderecoEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_below="@id/vwTelefoneEmpresa"
+            android:layout_margin="5dp"
+            android:scrollbars="vertical"
+            android:backgroundTint="@color/cimento"
+            android:drawableLeft="@drawable/ic_endereco"
+            android:drawableStart="@drawable/ic_endereco"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:gravity="center_vertical"
+            android:hint="@string/zs_hint_endereco_usuario"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_left"
+            android:textColor="@color/cloudGrey"
+            android:textColorHint="@color/cimento"
+            android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

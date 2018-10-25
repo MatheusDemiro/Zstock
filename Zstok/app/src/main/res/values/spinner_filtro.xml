@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_tipo_filtro">
+        <item>Selecione o tipo de filtro</item>
+        <item>Preço: Menor-Maior</item>
+        <item>Preço: Maior-Menor</item>
+    </string-array>
+</resources>

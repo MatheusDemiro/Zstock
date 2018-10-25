@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/jabuticaba"
+    android:padding="16dp"
+    tools:context=".perfil.gui.AlterarDataNascimentoPessoaFisicaActivity">
+
+    <EditText
+        android:id="@+id/edtAlterarDataNascimentoPessoFisica"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:drawableLeft="@drawable/ic_calendario"
+        android:drawableStart="@drawable/ic_calendario"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:hint="@string/zs_hint_nova_data_nascimento"
+        android:textColor="@color/cloudGrey"
+        android:textColorHint="@color/cimento"
+        android:backgroundTint="@color/cimento"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/btnAlterarDataNascimentoPessoaFisica"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/goiaba"
+        android:text="@string/zs_btn_alterar_data_nascimento"/>
+
+</LinearLayout>
