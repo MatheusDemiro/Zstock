@@ -1,2 +1,2 @@
 # Zstock
-**Repositório do projeto 'Zstock' para a cadeira de Processo de Desenvolvimento de Software 2018.1, da Universidade Federal Rural de Pernambuco.**
+**Repositório do projeto 'Zstock' para a disciplina Processo de Desenvolvimento de Software cursado no primeiro semestre de 2018, da Universidade Federal Rural de Pernambuco.**
